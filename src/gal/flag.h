@@ -7,6 +7,8 @@ namespace gal
 	{
 		public:
 			bool		all(unsigned int);
+			unsigned int	mask(unsigned int);
+			void		toggle(unsigned int);
 		private:
 			unsigned int	flag_;
 	};

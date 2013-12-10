@@ -4,14 +4,16 @@
 #include <memory>
 #include <deque>
 
-#include <sig/connection.h>
+#include <gal/sig/connection.h>
 
+namespace gal
+{
 namespace sig
 {
 	template <typename... Args> class signal
 	{
 		public:
-			typedef sig::connection<Args...> conn_t;
+			typedef gal::sig::connection<Args...> conn_t;
 
 			conn_t*		connect( std::function<int(Args...)> handle )
 			{
@@ -51,6 +53,7 @@ namespace sig
 		private:
 			std::deque<conn_t*>	connections_;
 	};
+}
 }
 
 #endif

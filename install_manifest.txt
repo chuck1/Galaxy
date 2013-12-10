@@ -1,2 +1,5 @@
 /nfs/stak/students/r/rymalc/usr/lib/libgalaxy.a
+/nfs/stak/students/r/rymalc/usr/include/gal/gal.h
 /nfs/stak/students/r/rymalc/usr/include/gal/flag.h
+/nfs/stak/students/r/rymalc/usr/include/gal/sig/signal.h
+/nfs/stak/students/r/rymalc/usr/include/gal/sig/connection.h

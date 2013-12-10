@@ -9,18 +9,11 @@
 
 namespace gal
 {
-	class map;
-	class map_value
-	{
-		public:
-			friend class map;
-		private:
-			int	i_;
-	};
+	template <class T> 
 	class map
 	{
 		public:
-			map()
+			map()i
 				:next_(0)
 			{}
 			template <class U> int	push(U* u)
@@ -29,7 +22,9 @@ namespace gal
 				{
 					return 1;
 				}
-
+				
+				u->
+				
 				map_[next_++] = u;
 			}
 			map_value*		at(int a)
