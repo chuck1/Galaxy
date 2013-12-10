@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /nfs/stak/students/r/rymalc/Programming/C++/galaxy
 CMakeFiles/galaxy.dir/all:
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/depend
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /nfs/stak/students/r/rymalc/Programming/C++/galaxy/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /nfs/stak/students/r/rymalc/Programming/C++/galaxy/CMakeFiles  1 2
 	@echo "Built target galaxy"
 .PHONY : CMakeFiles/galaxy.dir/all
 
@@ -69,7 +69,7 @@ all: CMakeFiles/galaxy.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/galaxy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /nfs/stak/students/r/rymalc/Programming/C++/galaxy/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /nfs/stak/students/r/rymalc/Programming/C++/galaxy/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/galaxy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /nfs/stak/students/r/rymalc/Programming/C++/galaxy/CMakeFiles 0
 .PHONY : CMakeFiles/galaxy.dir/rule
@@ -85,6 +85,41 @@ CMakeFiles/galaxy.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/galaxy.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_map.dir
+
+# All Build rule for target.
+CMakeFiles/test_map.dir/all:
+	$(MAKE) -f CMakeFiles/test_map.dir/build.make CMakeFiles/test_map.dir/depend
+	$(MAKE) -f CMakeFiles/test_map.dir/build.make CMakeFiles/test_map.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /nfs/stak/students/r/rymalc/Programming/C++/galaxy/CMakeFiles  3
+	@echo "Built target test_map"
+.PHONY : CMakeFiles/test_map.dir/all
+
+# Include target in all.
+all: CMakeFiles/test_map.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_map.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /nfs/stak/students/r/rymalc/Programming/C++/galaxy/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_map.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /nfs/stak/students/r/rymalc/Programming/C++/galaxy/CMakeFiles 0
+.PHONY : CMakeFiles/test_map.dir/rule
+
+# Convenience name for target.
+test_map: CMakeFiles/test_map.dir/rule
+.PHONY : test_map
+
+# clean rule for target.
+CMakeFiles/test_map.dir/clean:
+	$(MAKE) -f CMakeFiles/test_map.dir/build.make CMakeFiles/test_map.dir/clean
+.PHONY : CMakeFiles/test_map.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/test_map.dir/clean
 .PHONY : clean
 
 #=============================================================================

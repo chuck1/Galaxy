@@ -152,6 +152,19 @@ galaxy/fast:
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/build
 .PHONY : galaxy/fast
 
+#=============================================================================
+# Target rules for targets named test_map
+
+# Build rule for target.
+test_map: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_map
+.PHONY : test_map
+
+# fast build rule for target.
+test_map/fast:
+	$(MAKE) -f CMakeFiles/test_map.dir/build.make CMakeFiles/test_map.dir/build
+.PHONY : test_map/fast
+
 src/gal/flag.o: src/gal/flag.cpp.o
 .PHONY : src/gal/flag.o
 
@@ -176,6 +189,54 @@ src/gal/flag.cpp.s:
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/flag.cpp.s
 .PHONY : src/gal/flag.cpp.s
 
+src/gal/map.o: src/gal/map.cpp.o
+.PHONY : src/gal/map.o
+
+# target to build an object file
+src/gal/map.cpp.o:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/map.cpp.o
+.PHONY : src/gal/map.cpp.o
+
+src/gal/map.i: src/gal/map.cpp.i
+.PHONY : src/gal/map.i
+
+# target to preprocess a source file
+src/gal/map.cpp.i:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/map.cpp.i
+.PHONY : src/gal/map.cpp.i
+
+src/gal/map.s: src/gal/map.cpp.s
+.PHONY : src/gal/map.s
+
+# target to generate assembly for a file
+src/gal/map.cpp.s:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/map.cpp.s
+.PHONY : src/gal/map.cpp.s
+
+test/map/main.o: test/map/main.cpp.o
+.PHONY : test/map/main.o
+
+# target to build an object file
+test/map/main.cpp.o:
+	$(MAKE) -f CMakeFiles/test_map.dir/build.make CMakeFiles/test_map.dir/test/map/main.cpp.o
+.PHONY : test/map/main.cpp.o
+
+test/map/main.i: test/map/main.cpp.i
+.PHONY : test/map/main.i
+
+# target to preprocess a source file
+test/map/main.cpp.i:
+	$(MAKE) -f CMakeFiles/test_map.dir/build.make CMakeFiles/test_map.dir/test/map/main.cpp.i
+.PHONY : test/map/main.cpp.i
+
+test/map/main.s: test/map/main.cpp.s
+.PHONY : test/map/main.s
+
+# target to generate assembly for a file
+test/map/main.cpp.s:
+	$(MAKE) -f CMakeFiles/test_map.dir/build.make CMakeFiles/test_map.dir/test/map/main.cpp.s
+.PHONY : test/map/main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -189,9 +250,16 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test_map"
 	@echo "... src/gal/flag.o"
 	@echo "... src/gal/flag.i"
 	@echo "... src/gal/flag.s"
+	@echo "... src/gal/map.o"
+	@echo "... src/gal/map.i"
+	@echo "... src/gal/map.s"
+	@echo "... test/map/main.o"
+	@echo "... test/map/main.i"
+	@echo "... test/map/main.s"
 .PHONY : help
 
 

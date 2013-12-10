@@ -4,9 +4,7 @@
 #include <exception>
 #include <string>
 
-
-
-namespace jess
+namespace gal
 {
 	class except: public std::exception
 	{

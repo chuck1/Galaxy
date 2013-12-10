@@ -1,5 +1,6 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/galaxy.dir/src/gal/flag.cpp.o"
+  "CMakeFiles/galaxy.dir/src/gal/map.cpp.o"
   "libgalaxy.pdb"
   "libgalaxy.a"
 )

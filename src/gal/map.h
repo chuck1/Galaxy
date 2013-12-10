@@ -2,10 +2,10 @@
 #define __JESS_MAP_HPP__
 
 #include <map>
-
 #include <memory>
+#include <functional>
 
-#include <jess/except.hpp>
+#include <gal/except.h>
 
 namespace gal
 {
@@ -15,13 +15,13 @@ namespace gal
 		public:
 			friend class map;
 		private:
-			i_;
+			int	i_;
 	};
 	class map
 	{
 		public:
 			map()
-				:next_(0),
+				:next_(0)
 			{}
 			template <class U> int	push(U* u)
 			{
@@ -32,32 +32,32 @@ namespace gal
 
 				map_[next_++] = u;
 			}
-			T*			at(int a)
+			map_value*		at(int a)
 			{
 				auto it = map_.find( a );
-				if ( it == map_.end() )
+				if(it == map_.end())
 				{
-					return std::shared_ptr<T>();
+					return NULL;
 				}
 				else
 				{
-					return ( it->second );
+					return (it->second);
 				}
 			}
-			void			foreach( std::function<void(T*)> func )
+			void			foreach( std::function<void(map_value*)> func )
 			{
-				T* t = 0;
+				map_value* v = NULL;
 				auto it = map_.begin();
 				for ( ; it != map_.end(); ++it )
 				{
-					t = (it->second).get();
-					if ( t )
+					v = it->second;
+					if(v != NULL)
 					{
-						func( t );
+						func(v);
 					}
 					else
 					{
-						throw jess::except( "null pointer" );
+						throw gal::except("null pointer");
 					}
 				}
 			}
@@ -65,7 +65,7 @@ namespace gal
 			{
 				map_.clear();
 			}
-			void			erase( int a )
+			void			erase(int a)
 			{
 				auto it = map_.find(a);
 				if(it != map_.end())
@@ -74,7 +74,7 @@ namespace gal
 				}
 			}
 		private:
-			std::map<int,T*>	map_;
+			std::map<int,map_value*>	map_;
 			int			next_;
 	};	
 }

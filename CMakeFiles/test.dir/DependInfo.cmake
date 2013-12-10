@@ -4,8 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/nfs/stak/students/r/rymalc/Programming/C++/galaxy/src/gal/flag.cpp" "/nfs/stak/students/r/rymalc/Programming/C++/galaxy/CMakeFiles/galaxy.dir/src/gal/flag.cpp.o"
-  "/nfs/stak/students/r/rymalc/Programming/C++/galaxy/src/gal/map.cpp" "/nfs/stak/students/r/rymalc/Programming/C++/galaxy/CMakeFiles/galaxy.dir/src/gal/map.cpp.o"
+  "/nfs/stak/students/r/rymalc/Programming/C++/galaxy/test/map/main.cpp" "/nfs/stak/students/r/rymalc/Programming/C++/galaxy/CMakeFiles/test.dir/test/map/main.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

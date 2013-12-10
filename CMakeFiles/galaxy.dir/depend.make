@@ -4,3 +4,5 @@
 CMakeFiles/galaxy.dir/src/gal/flag.cpp.o: src/gal/flag.cpp
 CMakeFiles/galaxy.dir/src/gal/flag.cpp.o: src/gal/flag.h
 
+CMakeFiles/galaxy.dir/src/gal/map.cpp.o: src/gal/map.cpp
+
