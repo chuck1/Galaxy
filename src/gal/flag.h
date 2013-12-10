@@ -12,7 +12,8 @@ namespace gal
 			void		set(unsigned int);
 			void		unset(unsigned int);
 			void		toggle(unsigned int);
-			
+			unsigned int	mask(unsigned int);
+		private:
 			unsigned int	flag_;
 	};
 }

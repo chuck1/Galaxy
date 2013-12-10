@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/nfs/stak/students/r/rymalc/Programming/C++/galaxy/test/map/main.cpp
+gal/gal.h
+-
+
+src/gal/flag.h
+
+src/gal/gal.h
+gal/map.h
+-
+gal/flag.h
+-
+
+src/gal/map.h
+map
+-
+memory
+-
+jess/except.hpp
+-
+

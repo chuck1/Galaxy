@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/charles/Programming/C++/galaxy/src/gal/flag.cpp
+stdio.h
+-
+gal/flag.h
+-
+
+src/gal/flag.h
+
