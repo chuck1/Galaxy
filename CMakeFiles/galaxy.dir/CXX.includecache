@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/nfs/stak/students/r/rymalc/Programming/C++/galaxy/src/gal/flag.cpp
+gal/flag.h
+-
+
+src/gal/flag.h
+

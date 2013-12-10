@@ -1,0 +1,2 @@
+/nfs/stak/students/r/rymalc/usr/lib/libgalaxy.a
+/nfs/stak/students/r/rymalc/usr/include/gal/flag.h

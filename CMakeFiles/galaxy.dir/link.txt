@@ -1,0 +1,2 @@
+/usr/bin/ar cr libgalaxy.a  CMakeFiles/galaxy.dir/src/gal/flag.cpp.o
+/usr/bin/ranlib libgalaxy.a
