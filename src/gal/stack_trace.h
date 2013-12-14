@@ -3,23 +3,8 @@
 
 #include <stdio.h>
 
-/// Print a demangled stack backtrace of the caller function to FILE* out
-void print_stacktrace( FILE *out = stdout );
-
+void print_stacktrace(FILE* out = stdout);
 
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

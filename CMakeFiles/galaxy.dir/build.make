@@ -92,16 +92,66 @@ CMakeFiles/galaxy.dir/src/gal/map.cpp.o.provides: CMakeFiles/galaxy.dir/src/gal/
 
 CMakeFiles/galaxy.dir/src/gal/map.cpp.o.provides.build: CMakeFiles/galaxy.dir/src/gal/map.cpp.o
 
+CMakeFiles/galaxy.dir/src/gal/except.cpp.o: CMakeFiles/galaxy.dir/flags.make
+CMakeFiles/galaxy.dir/src/gal/except.cpp.o: src/gal/except.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/galaxy.dir/src/gal/except.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/galaxy.dir/src/gal/except.cpp.o -c /home/charles/Programming/C++/galaxy/src/gal/except.cpp
+
+CMakeFiles/galaxy.dir/src/gal/except.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galaxy.dir/src/gal/except.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/charles/Programming/C++/galaxy/src/gal/except.cpp > CMakeFiles/galaxy.dir/src/gal/except.cpp.i
+
+CMakeFiles/galaxy.dir/src/gal/except.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galaxy.dir/src/gal/except.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/charles/Programming/C++/galaxy/src/gal/except.cpp -o CMakeFiles/galaxy.dir/src/gal/except.cpp.s
+
+CMakeFiles/galaxy.dir/src/gal/except.cpp.o.requires:
+.PHONY : CMakeFiles/galaxy.dir/src/gal/except.cpp.o.requires
+
+CMakeFiles/galaxy.dir/src/gal/except.cpp.o.provides: CMakeFiles/galaxy.dir/src/gal/except.cpp.o.requires
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/except.cpp.o.provides.build
+.PHONY : CMakeFiles/galaxy.dir/src/gal/except.cpp.o.provides
+
+CMakeFiles/galaxy.dir/src/gal/except.cpp.o.provides.build: CMakeFiles/galaxy.dir/src/gal/except.cpp.o
+
+CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o: CMakeFiles/galaxy.dir/flags.make
+CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o: src/gal/stack_trace.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o -c /home/charles/Programming/C++/galaxy/src/gal/stack_trace.cpp
+
+CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/charles/Programming/C++/galaxy/src/gal/stack_trace.cpp > CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.i
+
+CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/charles/Programming/C++/galaxy/src/gal/stack_trace.cpp -o CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.s
+
+CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o.requires:
+.PHONY : CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o.requires
+
+CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o.provides: CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o.requires
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o.provides.build
+.PHONY : CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o.provides
+
+CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o.provides.build: CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o
+
 # Object files for target galaxy
 galaxy_OBJECTS = \
 "CMakeFiles/galaxy.dir/src/gal/flag.cpp.o" \
-"CMakeFiles/galaxy.dir/src/gal/map.cpp.o"
+"CMakeFiles/galaxy.dir/src/gal/map.cpp.o" \
+"CMakeFiles/galaxy.dir/src/gal/except.cpp.o" \
+"CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o"
 
 # External object files for target galaxy
 galaxy_EXTERNAL_OBJECTS =
 
 libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/flag.cpp.o
 libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/map.cpp.o
+libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/except.cpp.o
+libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o
 libgalaxy.a: CMakeFiles/galaxy.dir/build.make
 libgalaxy.a: CMakeFiles/galaxy.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libgalaxy.a"
@@ -114,6 +164,8 @@ CMakeFiles/galaxy.dir/build: libgalaxy.a
 
 CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/flag.cpp.o.requires
 CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/map.cpp.o.requires
+CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/except.cpp.o.requires
+CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o.requires
 .PHONY : CMakeFiles/galaxy.dir/requires
 
 CMakeFiles/galaxy.dir/clean:

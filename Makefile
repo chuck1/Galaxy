@@ -162,6 +162,30 @@ test_map/fast:
 	$(MAKE) -f CMakeFiles/test_map.dir/build.make CMakeFiles/test_map.dir/build
 .PHONY : test_map/fast
 
+src/gal/except.o: src/gal/except.cpp.o
+.PHONY : src/gal/except.o
+
+# target to build an object file
+src/gal/except.cpp.o:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/except.cpp.o
+.PHONY : src/gal/except.cpp.o
+
+src/gal/except.i: src/gal/except.cpp.i
+.PHONY : src/gal/except.i
+
+# target to preprocess a source file
+src/gal/except.cpp.i:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/except.cpp.i
+.PHONY : src/gal/except.cpp.i
+
+src/gal/except.s: src/gal/except.cpp.s
+.PHONY : src/gal/except.s
+
+# target to generate assembly for a file
+src/gal/except.cpp.s:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/except.cpp.s
+.PHONY : src/gal/except.cpp.s
+
 src/gal/flag.o: src/gal/flag.cpp.o
 .PHONY : src/gal/flag.o
 
@@ -210,6 +234,30 @@ src/gal/map.cpp.s:
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/map.cpp.s
 .PHONY : src/gal/map.cpp.s
 
+src/gal/stack_trace.o: src/gal/stack_trace.cpp.o
+.PHONY : src/gal/stack_trace.o
+
+# target to build an object file
+src/gal/stack_trace.cpp.o:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o
+.PHONY : src/gal/stack_trace.cpp.o
+
+src/gal/stack_trace.i: src/gal/stack_trace.cpp.i
+.PHONY : src/gal/stack_trace.i
+
+# target to preprocess a source file
+src/gal/stack_trace.cpp.i:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.i
+.PHONY : src/gal/stack_trace.cpp.i
+
+src/gal/stack_trace.s: src/gal/stack_trace.cpp.s
+.PHONY : src/gal/stack_trace.s
+
+# target to generate assembly for a file
+src/gal/stack_trace.cpp.s:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.s
+.PHONY : src/gal/stack_trace.cpp.s
+
 test/map/main.o: test/map/main.cpp.o
 .PHONY : test/map/main.o
 
@@ -248,12 +296,18 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test_map"
+	@echo "... src/gal/except.o"
+	@echo "... src/gal/except.i"
+	@echo "... src/gal/except.s"
 	@echo "... src/gal/flag.o"
 	@echo "... src/gal/flag.i"
 	@echo "... src/gal/flag.s"
 	@echo "... src/gal/map.o"
 	@echo "... src/gal/map.i"
 	@echo "... src/gal/map.s"
+	@echo "... src/gal/stack_trace.o"
+	@echo "... src/gal/stack_trace.i"
+	@echo "... src/gal/stack_trace.s"
 	@echo "... test/map/main.o"
 	@echo "... test/map/main.i"
 	@echo "... test/map/main.s"

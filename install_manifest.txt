@@ -3,5 +3,6 @@
 /home/charles/usr/include/gal/flag.h
 /home/charles/usr/include/gal/map.h
 /home/charles/usr/include/gal/except.h
+/home/charles/usr/include/gal/stack_trace.h
 /home/charles/usr/include/gal/sig/signal.h
 /home/charles/usr/include/gal/sig/connection.h

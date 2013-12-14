@@ -77,6 +77,7 @@ test_map_OBJECTS = \
 test_map_EXTERNAL_OBJECTS =
 
 test_map: CMakeFiles/test_map.dir/test/map/main.cpp.o
+test_map: libgalaxy.a
 test_map: CMakeFiles/test_map.dir/build.make
 test_map: CMakeFiles/test_map.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable test_map"

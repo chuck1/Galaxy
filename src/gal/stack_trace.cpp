@@ -3,7 +3,7 @@
 #include <execinfo.h>
 #include <cxxabi.h>
 
-#include <jess/stack_trace.hpp>
+#include <gal/stack_trace.h>
 
 void print_stacktrace( FILE *out )
 {
@@ -28,7 +28,7 @@ void print_stacktrace( FILE *out )
 
 	// allocate string which will be filled with the demangled function name
 	size_t funcnamesize = 256;
-	char* funcname = (char*)malloc(funcnamesize);
+	char* funcname = new char[funcnamesize];
 
 	// iterate over the returned symbol lines. skip the first, it is the
 	// address of this function.
@@ -87,8 +87,8 @@ void print_stacktrace( FILE *out )
 		}
 	}
 
-	free(funcname);
-	free(symbollist);
+	delete funcname;
+	delete symbollist;
 
 
 

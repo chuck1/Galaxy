@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/charles/Programming/C++/galaxy/src/gal/flag.cpp
+/home/charles/Programming/C++/galaxy/src/gal/stack_trace.cpp
 stdio.h
 -
-gal/flag.h
+execinfo.h
+-
+cxxabi.h
+-
+gal/stack_trace.h
 -
 
-src/gal/flag.h
+src/gal/stack_trace.h
+stdio.h
+-
 

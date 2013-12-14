@@ -7,29 +7,32 @@
 #include <cxxabi.h>
 
 
-#include <jess/stack_trace.hpp>
+#include <gal/stack_trace.h>
+#include <gal/except.h>
 
-#include <jess/except.hpp>
 
-
-jess::except::except(const std::string& message, int ec, bool inclSysMsg)throw() : message_(message), ec_(ec)
+gal::except::except(char const * message, int ec, bool inclSysMsg) throw():
+	ec_(ec)
 {
+	message_ = new char[256];
+	
 	if (inclSysMsg)
 	{
-		message_.append(": ");
-		message_.append(strerror(errno));
+		strcat(message_, message);
+		strcat(message_, ": ");
+		strcat(message_, strerror(errno));
 	}
-
-	printf("%s\n",message_.c_str());
-
+	
+	printf("%s\n", message_);
+	
 	print_stacktrace();
 }
-jess::except::~except() throw()
+gal::except::~except() throw()
 {
 }
-const char*	jess::except::what() const throw()
+const char*	gal::except::what() const throw()
 {
-	return message_.c_str();
+	return message_;
 }
 
 

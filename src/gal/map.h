@@ -16,7 +16,7 @@ namespace gal
 			map()
 				:next_(0)
 			{}
-			template <class U> int	push(U* u)
+			template <class U> int	push(std::shared_ptr<U> u)
 			{
 				if(u == NULL)
 				{
@@ -29,7 +29,7 @@ namespace gal
 				
 				return next_++;
 			}
-			T*		at(int a)
+			std::shared_ptr<T>		at(int a)
 			{
 				auto it = map_.find( a );
 				if(it == map_.end())
@@ -41,16 +41,17 @@ namespace gal
 					return (it->second);
 				}
 			}
-			void			foreach( std::function<void(T*)> func )
+			void				foreach(std::function<void(T*)> func)
 			{
-				T* t = NULL;
+				std::shared_ptr<T> t;
 				auto it = map_.begin();
-				for ( ; it != map_.end(); ++it )
+				for(; it != map_.end(); ++it)
 				{
 					t = it->second;
-					if(t != NULL)
+					//U* u = (U*)t;
+					if(t)
 					{
-						func(t);
+						func(t.get());
 					}
 					else
 					{
@@ -58,11 +59,11 @@ namespace gal
 					}
 				}
 			}
-			void			clear()
+			void					clear()
 			{
 				map_.clear();
 			}
-			void			erase(int a)
+			void					erase(int a)
 			{
 				auto it = map_.find(a);
 				if(it != map_.end())
@@ -70,9 +71,9 @@ namespace gal
 					map_.erase(a);
 				}
 			}
-		private:
-			std::map<int,T*>	map_;
-			int			next_;
+		//private:
+			std::map<int,std::shared_ptr<T> >	map_;
+			int					next_;
 	};	
 }
 
