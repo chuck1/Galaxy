@@ -6,20 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/home/charles/Programming/C++/galaxy/src/gal/asio/network/communicating.cpp
-cstdlib
+/home/charles/Programming/C++/galaxy/test/asio/main.cpp
+gal/asio/network/client.h
 -
-deque
--
-iostream
--
-thread
--
-gal/config.h
--
-gal/asio/message.h
--
-gal/asio/network/communicating.h
+gal/asio/network/server.h
 -
 
 src/gal/asio/message.h
@@ -32,6 +22,18 @@ cstring
 memory
 -
 deque
+-
+
+src/gal/asio/network/client.h
+cstdlib
+-
+deque
+-
+iostream
+-
+thread
+-
+gal/asio/network/communicating.h
 -
 
 src/gal/asio/network/communicating.h
@@ -50,5 +52,21 @@ sys/socket.h
 gal/asio/message.h
 -
 
-src/gal/config.h
+src/gal/asio/network/server.h
+cstdlib
+-
+deque
+-
+iostream
+-
+list
+-
+memory
+-
+set
+-
+utility
+-
+gal/asio/network/communicating.h
+-
 

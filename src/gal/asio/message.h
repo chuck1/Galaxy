@@ -8,7 +8,7 @@
 #include <memory> 
 #include <deque>
 
-namespace jess
+namespace gal
 {
 	namespace asio
 	{
@@ -48,7 +48,7 @@ namespace jess
 				/// body length
 				std::size_t		body_length() const;
 				/// body length
-				void			body_length( std::size_t );
+				void			body_length(std::size_t);
 				/// decode header
 				bool			decode_header();
 				/// encode header

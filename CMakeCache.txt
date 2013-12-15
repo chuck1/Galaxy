@@ -116,7 +116,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=test_map
+CMAKE_PROJECT_NAME:STATIC=test_asio
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -159,6 +159,12 @@ galaxy_LIB_DEPENDS:STATIC=
 
 //Value Computed by CMake
 galaxy_SOURCE_DIR:STATIC=/home/charles/Programming/C++/galaxy
+
+//Value Computed by CMake
+test_asio_BINARY_DIR:STATIC=/home/charles/Programming/C++/galaxy
+
+//Value Computed by CMake
+test_asio_SOURCE_DIR:STATIC=/home/charles/Programming/C++/galaxy
 
 //Value Computed by CMake
 test_map_BINARY_DIR:STATIC=/home/charles/Programming/C++/galaxy

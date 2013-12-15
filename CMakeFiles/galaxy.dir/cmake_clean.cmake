@@ -3,6 +3,10 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/galaxy.dir/src/gal/map.cpp.o"
   "CMakeFiles/galaxy.dir/src/gal/except.cpp.o"
   "CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o"
+  "CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o"
+  "CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o"
+  "CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o"
+  "CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o"
   "libgalaxy.pdb"
   "libgalaxy.a"
 )

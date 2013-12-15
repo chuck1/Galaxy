@@ -150,6 +150,19 @@ galaxy/fast:
 .PHONY : galaxy/fast
 
 #=============================================================================
+# Target rules for targets named test_asio
+
+# Build rule for target.
+test_asio: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_asio
+.PHONY : test_asio
+
+# fast build rule for target.
+test_asio/fast:
+	$(MAKE) -f CMakeFiles/test_asio.dir/build.make CMakeFiles/test_asio.dir/build
+.PHONY : test_asio/fast
+
+#=============================================================================
 # Target rules for targets named test_map
 
 # Build rule for target.
@@ -161,6 +174,102 @@ test_map: cmake_check_build_system
 test_map/fast:
 	$(MAKE) -f CMakeFiles/test_map.dir/build.make CMakeFiles/test_map.dir/build
 .PHONY : test_map/fast
+
+src/gal/asio/message.o: src/gal/asio/message.cpp.o
+.PHONY : src/gal/asio/message.o
+
+# target to build an object file
+src/gal/asio/message.cpp.o:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o
+.PHONY : src/gal/asio/message.cpp.o
+
+src/gal/asio/message.i: src/gal/asio/message.cpp.i
+.PHONY : src/gal/asio/message.i
+
+# target to preprocess a source file
+src/gal/asio/message.cpp.i:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.i
+.PHONY : src/gal/asio/message.cpp.i
+
+src/gal/asio/message.s: src/gal/asio/message.cpp.s
+.PHONY : src/gal/asio/message.s
+
+# target to generate assembly for a file
+src/gal/asio/message.cpp.s:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.s
+.PHONY : src/gal/asio/message.cpp.s
+
+src/gal/asio/network/client.o: src/gal/asio/network/client.cpp.o
+.PHONY : src/gal/asio/network/client.o
+
+# target to build an object file
+src/gal/asio/network/client.cpp.o:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o
+.PHONY : src/gal/asio/network/client.cpp.o
+
+src/gal/asio/network/client.i: src/gal/asio/network/client.cpp.i
+.PHONY : src/gal/asio/network/client.i
+
+# target to preprocess a source file
+src/gal/asio/network/client.cpp.i:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.i
+.PHONY : src/gal/asio/network/client.cpp.i
+
+src/gal/asio/network/client.s: src/gal/asio/network/client.cpp.s
+.PHONY : src/gal/asio/network/client.s
+
+# target to generate assembly for a file
+src/gal/asio/network/client.cpp.s:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.s
+.PHONY : src/gal/asio/network/client.cpp.s
+
+src/gal/asio/network/communicating.o: src/gal/asio/network/communicating.cpp.o
+.PHONY : src/gal/asio/network/communicating.o
+
+# target to build an object file
+src/gal/asio/network/communicating.cpp.o:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o
+.PHONY : src/gal/asio/network/communicating.cpp.o
+
+src/gal/asio/network/communicating.i: src/gal/asio/network/communicating.cpp.i
+.PHONY : src/gal/asio/network/communicating.i
+
+# target to preprocess a source file
+src/gal/asio/network/communicating.cpp.i:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.i
+.PHONY : src/gal/asio/network/communicating.cpp.i
+
+src/gal/asio/network/communicating.s: src/gal/asio/network/communicating.cpp.s
+.PHONY : src/gal/asio/network/communicating.s
+
+# target to generate assembly for a file
+src/gal/asio/network/communicating.cpp.s:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.s
+.PHONY : src/gal/asio/network/communicating.cpp.s
+
+src/gal/asio/network/server.o: src/gal/asio/network/server.cpp.o
+.PHONY : src/gal/asio/network/server.o
+
+# target to build an object file
+src/gal/asio/network/server.cpp.o:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o
+.PHONY : src/gal/asio/network/server.cpp.o
+
+src/gal/asio/network/server.i: src/gal/asio/network/server.cpp.i
+.PHONY : src/gal/asio/network/server.i
+
+# target to preprocess a source file
+src/gal/asio/network/server.cpp.i:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.i
+.PHONY : src/gal/asio/network/server.cpp.i
+
+src/gal/asio/network/server.s: src/gal/asio/network/server.cpp.s
+.PHONY : src/gal/asio/network/server.s
+
+# target to generate assembly for a file
+src/gal/asio/network/server.cpp.s:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.s
+.PHONY : src/gal/asio/network/server.cpp.s
 
 src/gal/except.o: src/gal/except.cpp.o
 .PHONY : src/gal/except.o
@@ -258,6 +367,30 @@ src/gal/stack_trace.cpp.s:
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.s
 .PHONY : src/gal/stack_trace.cpp.s
 
+test/asio/main.o: test/asio/main.cpp.o
+.PHONY : test/asio/main.o
+
+# target to build an object file
+test/asio/main.cpp.o:
+	$(MAKE) -f CMakeFiles/test_asio.dir/build.make CMakeFiles/test_asio.dir/test/asio/main.cpp.o
+.PHONY : test/asio/main.cpp.o
+
+test/asio/main.i: test/asio/main.cpp.i
+.PHONY : test/asio/main.i
+
+# target to preprocess a source file
+test/asio/main.cpp.i:
+	$(MAKE) -f CMakeFiles/test_asio.dir/build.make CMakeFiles/test_asio.dir/test/asio/main.cpp.i
+.PHONY : test/asio/main.cpp.i
+
+test/asio/main.s: test/asio/main.cpp.s
+.PHONY : test/asio/main.s
+
+# target to generate assembly for a file
+test/asio/main.cpp.s:
+	$(MAKE) -f CMakeFiles/test_asio.dir/build.make CMakeFiles/test_asio.dir/test/asio/main.cpp.s
+.PHONY : test/asio/main.cpp.s
+
 test/map/main.o: test/map/main.cpp.o
 .PHONY : test/map/main.o
 
@@ -295,7 +428,20 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test_asio"
 	@echo "... test_map"
+	@echo "... src/gal/asio/message.o"
+	@echo "... src/gal/asio/message.i"
+	@echo "... src/gal/asio/message.s"
+	@echo "... src/gal/asio/network/client.o"
+	@echo "... src/gal/asio/network/client.i"
+	@echo "... src/gal/asio/network/client.s"
+	@echo "... src/gal/asio/network/communicating.o"
+	@echo "... src/gal/asio/network/communicating.i"
+	@echo "... src/gal/asio/network/communicating.s"
+	@echo "... src/gal/asio/network/server.o"
+	@echo "... src/gal/asio/network/server.i"
+	@echo "... src/gal/asio/network/server.s"
 	@echo "... src/gal/except.o"
 	@echo "... src/gal/except.i"
 	@echo "... src/gal/except.s"
@@ -308,6 +454,9 @@ help:
 	@echo "... src/gal/stack_trace.o"
 	@echo "... src/gal/stack_trace.i"
 	@echo "... src/gal/stack_trace.s"
+	@echo "... test/asio/main.o"
+	@echo "... test/asio/main.i"
+	@echo "... test/asio/main.s"
 	@echo "... test/map/main.o"
 	@echo "... test/map/main.i"
 	@echo "... test/map/main.s"

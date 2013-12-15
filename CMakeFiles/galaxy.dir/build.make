@@ -138,12 +138,108 @@ CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o.provides: CMakeFiles/galaxy.dir/
 
 CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o.provides.build: CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o
 
+CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o: CMakeFiles/galaxy.dir/flags.make
+CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o: src/gal/asio/message.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o -c /home/charles/Programming/C++/galaxy/src/gal/asio/message.cpp
+
+CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/charles/Programming/C++/galaxy/src/gal/asio/message.cpp > CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.i
+
+CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/charles/Programming/C++/galaxy/src/gal/asio/message.cpp -o CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.s
+
+CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o.requires:
+.PHONY : CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o.requires
+
+CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o.provides: CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o.requires
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o.provides.build
+.PHONY : CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o.provides
+
+CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o.provides.build: CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o: CMakeFiles/galaxy.dir/flags.make
+CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o: src/gal/asio/network/communicating.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o -c /home/charles/Programming/C++/galaxy/src/gal/asio/network/communicating.cpp
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/charles/Programming/C++/galaxy/src/gal/asio/network/communicating.cpp > CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.i
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/charles/Programming/C++/galaxy/src/gal/asio/network/communicating.cpp -o CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.s
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o.requires:
+.PHONY : CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o.requires
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o.provides: CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o.requires
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o.provides.build
+.PHONY : CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o.provides
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o.provides.build: CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o: CMakeFiles/galaxy.dir/flags.make
+CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o: src/gal/asio/network/server.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles $(CMAKE_PROGRESS_7)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o -c /home/charles/Programming/C++/galaxy/src/gal/asio/network/server.cpp
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/charles/Programming/C++/galaxy/src/gal/asio/network/server.cpp > CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.i
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/charles/Programming/C++/galaxy/src/gal/asio/network/server.cpp -o CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.s
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o.requires:
+.PHONY : CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o.requires
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o.provides: CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o.requires
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o.provides.build
+.PHONY : CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o.provides
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o.provides.build: CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o: CMakeFiles/galaxy.dir/flags.make
+CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o: src/gal/asio/network/client.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles $(CMAKE_PROGRESS_8)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o -c /home/charles/Programming/C++/galaxy/src/gal/asio/network/client.cpp
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/charles/Programming/C++/galaxy/src/gal/asio/network/client.cpp > CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.i
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/charles/Programming/C++/galaxy/src/gal/asio/network/client.cpp -o CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.s
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o.requires:
+.PHONY : CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o.requires
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o.provides: CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o.requires
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o.provides.build
+.PHONY : CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o.provides
+
+CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o.provides.build: CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o
+
 # Object files for target galaxy
 galaxy_OBJECTS = \
 "CMakeFiles/galaxy.dir/src/gal/flag.cpp.o" \
 "CMakeFiles/galaxy.dir/src/gal/map.cpp.o" \
 "CMakeFiles/galaxy.dir/src/gal/except.cpp.o" \
-"CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o"
+"CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o" \
+"CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o" \
+"CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o" \
+"CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o" \
+"CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o"
 
 # External object files for target galaxy
 galaxy_EXTERNAL_OBJECTS =
@@ -152,6 +248,10 @@ libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/flag.cpp.o
 libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/map.cpp.o
 libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/except.cpp.o
 libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o
+libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o
+libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o
+libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o
+libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o
 libgalaxy.a: CMakeFiles/galaxy.dir/build.make
 libgalaxy.a: CMakeFiles/galaxy.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libgalaxy.a"
@@ -166,6 +266,10 @@ CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/flag.cpp.o.require
 CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/map.cpp.o.requires
 CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/except.cpp.o.requires
 CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o.requires
+CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/asio/message.cpp.o.requires
+CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/asio/network/communicating.cpp.o.requires
+CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/asio/network/server.cpp.o.requires
+CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/asio/network/client.cpp.o.requires
 .PHONY : CMakeFiles/galaxy.dir/requires
 
 CMakeFiles/galaxy.dir/clean:

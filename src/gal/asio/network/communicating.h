@@ -9,9 +9,9 @@
 
 #include <sys/socket.h>
 
-#include <jess/asio/message.hpp>
+#include <gal/asio/message.h>
 
-namespace jess
+namespace gal
 {
 	namespace asio
 	{
@@ -19,29 +19,30 @@ namespace jess
 		{
 			/** %socket %communicating
 			 */
-			class socket_communicating
+			class communicating
 			{
 				public:
 					/** pointer
 					 */
-					typedef std::shared_ptr<socket_communicating>	shared_t;
+					typedef std::shared_ptr<communicating>	shared_t;
 					/** deque
 					 */
 					typedef std::vector<shared_t>			vector_t;
 				public:
 					/** ctor
 					 */
-					socket_communicating( int socket );
+					communicating( int socket );
 					/** write
 					 */
-					void					write( jess::asio::message::shared_t );
+					void					write( gal::asio::message::shared_t );
 					/** close
 					 */
 					void					close();
-				protected:
+			//	protected:
 					/** thread write
 					 */
-					void					thread_write( jess::asio::message::shared_t );
+					void					start();
+					void					thread_write( gal::asio::message::shared_t );
 					/** thread write dispath
 					 */
 					void					thread_write_dispatch();
@@ -63,19 +64,19 @@ namespace jess
 					/** handle write
 					 */
 					void					handle_do_write();
-				protected:
+			//	protected:
 					/** socket
 					 */
 					int					socket_;
 					/** message
 					 */
-					jess::asio::message::shared_t		read_msg_;
+					gal::asio::message::shared_t		read_msg_;
 					/** message deque
 					 */
-					jess::asio::message::deque_t		write_queue_;
+					gal::asio::message::deque_t		write_queue_;
 					/** process body
 					 */
-					jess::asio::message::function_t		process_body_;
+					gal::asio::message::function_t		process_body_;
 					/** terminate
 					 */
 					bool					terminate_;

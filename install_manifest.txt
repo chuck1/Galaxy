@@ -6,3 +6,6 @@
 /home/charles/usr/include/gal/stack_trace.h
 /home/charles/usr/include/gal/sig/signal.h
 /home/charles/usr/include/gal/sig/connection.h
+/home/charles/usr/include/gal/sig/communicating.h
+/home/charles/usr/include/gal/sig/server.h
+/home/charles/usr/include/gal/sig/client.h

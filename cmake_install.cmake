@@ -64,6 +64,15 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal/sig" TYPE FILE FILES "/home/charles/Programming/C++/galaxy/src/gal/sig/connection.h")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
+IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal/sig" TYPE FILE FILES
+    "/home/charles/Programming/C++/galaxy/src/gal/asio/message.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/asio/network/communicating.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/asio/network/server.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/asio/network/client.h"
+    )
+ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+
 IF(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 ELSE(CMAKE_INSTALL_COMPONENT)
