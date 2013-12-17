@@ -3,7 +3,8 @@
 
 CMakeFiles/test_asio.dir/test/asio/main.cpp.o
  /home/charles/Programming/C++/galaxy/test/asio/main.cpp
- src/gal/asio/message.h
- src/gal/asio/network/client.h
- src/gal/asio/network/communicating.h
- src/gal/asio/network/server.h
+ src/gal/config.h
+ src/gal/network/client.h
+ src/gal/network/communicating.h
+ src/gal/network/message.h
+ src/gal/network/server.h

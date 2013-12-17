@@ -11,7 +11,7 @@
 #include <unistd.h>          // For close()
 #include <netinet/in.h>      // For sockaddr_in
 
-#include <gal/asio/network/client.h>
+#include <gal/network/client.h>
 
 #include <gal/config.h>
 #include <gal/free.h>
@@ -36,7 +36,7 @@ void fillAddr(char const * address, unsigned short port, sockaddr_in &addr)
 	addr.sin_port = htons(port);     // Assign port in network byte order
 }
 
-gal::asio::network::client::client(char const * foreign_address, unsigned short foreign_port):
+gal::network::client::client(char const * foreign_address, unsigned short foreign_port):
 	foreign_address_(foreign_address),
 	foreign_port_(foreign_port),
 	communicating(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP))

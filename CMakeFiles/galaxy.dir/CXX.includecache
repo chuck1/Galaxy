@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/charles/Programming/C++/galaxy/src/gal/asio/network/communicating.cpp
+/home/charles/Programming/C++/galaxy/src/gal/network/client.cpp
 cstdlib
 -
 deque
@@ -15,26 +15,44 @@ iostream
 -
 thread
 -
+netinet/in.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netdb.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+netinet/in.h
+-
+gal/network/client.h
+-
 gal/config.h
 -
-gal/asio/message.h
--
-gal/asio/network/communicating.h
+gal/free.h
 -
 
-src/gal/asio/message.h
-cstdio
--
+src/gal/config.h
+
+src/gal/free.h
+
+src/gal/network/client.h
 cstdlib
--
-cstring
--
-memory
 -
 deque
 -
+iostream
+-
+thread
+-
+gal/network/communicating.h
+-
 
-src/gal/asio/network/communicating.h
+src/gal/network/communicating.h
 cstdlib
 -
 deque
@@ -47,8 +65,18 @@ thread
 -
 sys/socket.h
 -
-gal/asio/message.h
+gal/network/message.h
 -
 
-src/gal/config.h
+src/gal/network/message.h
+cstdio
+-
+cstdlib
+-
+cstring
+-
+memory
+-
+deque
+-
 

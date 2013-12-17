@@ -10,7 +10,7 @@
 
 namespace gal
 {
-	namespace asio
+	namespace network
 	{
 		/// message
 		class message

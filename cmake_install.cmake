@@ -37,23 +37,14 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal" TYPE FILE FILES "/home/charles/Programming/C++/galaxy/src/gal/gal.h")
-ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-
-IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal" TYPE FILE FILES "/home/charles/Programming/C++/galaxy/src/gal/flag.h")
-ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-
-IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal" TYPE FILE FILES "/home/charles/Programming/C++/galaxy/src/gal/map.h")
-ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-
-IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal" TYPE FILE FILES "/home/charles/Programming/C++/galaxy/src/gal/except.h")
-ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-
-IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal" TYPE FILE FILES "/home/charles/Programming/C++/galaxy/src/gal/stack_trace.h")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal" TYPE FILE FILES
+    "/home/charles/Programming/C++/galaxy/src/gal/config.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/gal.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/flag.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/map.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/except.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/stack_trace.h"
+    )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -65,11 +56,11 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal/sig" TYPE FILE FILES
-    "/home/charles/Programming/C++/galaxy/src/gal/asio/message.h"
-    "/home/charles/Programming/C++/galaxy/src/gal/asio/network/communicating.h"
-    "/home/charles/Programming/C++/galaxy/src/gal/asio/network/server.h"
-    "/home/charles/Programming/C++/galaxy/src/gal/asio/network/client.h"
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal/network" TYPE FILE FILES
+    "/home/charles/Programming/C++/galaxy/src/gal/network/message.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/network/communicating.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/network/server.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/network/client.h"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

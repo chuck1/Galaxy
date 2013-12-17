@@ -2,36 +2,36 @@
 #include <cstdlib>
 #include <cstring>
 
-#include <gal/asio/message.h>
+#include <gal/network/message.h>
 
-gal::asio::message::message(): body_length_(0)
+gal::network::message::message(): body_length_(0)
 {
 }
-const char*		gal::asio::message::data() const
-{
-	return data_;
-}
-char*			gal::asio::message::data()
+const char*		gal::network::message::data() const
 {
 	return data_;
 }
-std::size_t		gal::asio::message::length() const
+char*			gal::network::message::data()
+{
+	return data_;
+}
+std::size_t		gal::network::message::length() const
 {
 	return header_length + body_length_;
 }
-const char*		gal::asio::message::body() const
+const char*		gal::network::message::body() const
 {
 	return data_ + header_length;
 }
-char*			gal::asio::message::body()
+char*			gal::network::message::body()
 {
 	return data_ + header_length;
 }
-std::size_t		gal::asio::message::body_length() const
+std::size_t		gal::network::message::body_length() const
 {
 	return body_length_;
 }
-void			gal::asio::message::body_length(std::size_t new_length)
+void			gal::network::message::body_length(std::size_t new_length)
 {
 	body_length_ = new_length;
 	if (body_length_ > max_body_length)
@@ -39,7 +39,7 @@ void			gal::asio::message::body_length(std::size_t new_length)
 		body_length_ = max_body_length;
 	}
 }
-bool			gal::asio::message::decode_header()
+bool			gal::network::message::decode_header()
 {
 	//char header[header_length + 1] = "";
 	
@@ -59,7 +59,7 @@ bool			gal::asio::message::decode_header()
 	
 	return true;
 }
-void			gal::asio::message::encode_header()
+void			gal::network::message::encode_header()
 {
 	//char header[header_length + 1] = "";
 	//std::sprintf(header, "%4d", int(body_length_));

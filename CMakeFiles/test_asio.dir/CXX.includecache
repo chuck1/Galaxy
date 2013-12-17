@@ -7,24 +7,14 @@
 #IncludeRegexTransform: 
 
 /home/charles/Programming/C++/galaxy/test/asio/main.cpp
-gal/asio/network/client.h
+gal/network/client.h
 -
-gal/asio/network/server.h
--
-
-src/gal/asio/message.h
-cstdio
--
-cstdlib
--
-cstring
--
-memory
--
-deque
+gal/network/server.h
 -
 
-src/gal/asio/network/client.h
+src/gal/config.h
+
+src/gal/network/client.h
 cstdlib
 -
 deque
@@ -33,10 +23,10 @@ iostream
 -
 thread
 -
-gal/asio/network/communicating.h
+gal/network/communicating.h
 -
 
-src/gal/asio/network/communicating.h
+src/gal/network/communicating.h
 cstdlib
 -
 deque
@@ -49,10 +39,22 @@ thread
 -
 sys/socket.h
 -
-gal/asio/message.h
+gal/network/message.h
 -
 
-src/gal/asio/network/server.h
+src/gal/network/message.h
+cstdio
+-
+cstdlib
+-
+cstring
+-
+memory
+-
+deque
+-
+
+src/gal/network/server.h
 cstdlib
 -
 deque
@@ -67,6 +69,20 @@ set
 -
 utility
 -
-gal/asio/network/communicating.h
+sys/types.h
+-
+sys/socket.h
+-
+netdb.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+netinet/in.h
+-
+gal/config.h
+-
+gal/network/communicating.h
 -
 

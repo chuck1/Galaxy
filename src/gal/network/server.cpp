@@ -15,9 +15,9 @@
 
 
 #include <gal/config.h>
-#include <gal/asio/network/server.h>
+#include <gal/network/server.h>
 
-
+/*
 gal::asio::network::server::server(unsigned short localPort, int queueLen):
 	socket_(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)),
 	thread_accept_(std::bind(&server::thread_accept, this)),
@@ -27,7 +27,7 @@ gal::asio::network::server::server(unsigned short localPort, int queueLen):
 
 
 }
-void	gal::asio::network::server::thread_accept()
+void	gal::network::server::thread_accept()
 {
 	GALAXY_DEBUG_FUNCTION;
 
@@ -71,5 +71,5 @@ void	gal::asio::network::server::thread_accept()
 		}
 	}
 }
-
+*/
 

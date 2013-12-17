@@ -43,4 +43,5 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/galaxy.dir/DependInfo.cmake"
   "CMakeFiles/test_asio.dir/DependInfo.cmake"
   "CMakeFiles/test_map.dir/DependInfo.cmake"
+  "CMakeFiles/test_sig.dir/DependInfo.cmake"
   )

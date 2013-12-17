@@ -6,24 +6,24 @@
 #include <gal/config.h>
 //#include <gal/free.hpp>
 
-#include <gal/asio/message.h>
-#include <gal/asio/network/communicating.h>
+#include <gal/network/message.h>
+#include <gal/network/communicating.h>
 
-gal::asio::network::communicating::communicating( int socket ):
+gal::network::communicating::communicating( int socket ):
 	socket_(socket),
-	read_msg_( new gal::asio::message ),
+	read_msg_(new gal::network::message),
 	terminate_(false)
 {
 	GALAXY_DEBUG_FUNCTION;
 	
 	printf("socket = %i\n", socket);
 }
-void	gal::asio::network::communicating::start()
+void	gal::network::communicating::start()
 {
 	write_thread_ = std::thread(std::bind(&communicating::thread_write_dispatch, this ) );
 	read_thread_ = std::thread(std::bind(&communicating::thread_read_header, this ) );
 }
-void	gal::asio::network::communicating::write( gal::asio::message::shared_t msg )
+void	gal::network::communicating::write(gal::network::message::shared_t msg)
 {	
 	GALAXY_DEBUG_FUNCTION;
 
@@ -35,7 +35,7 @@ void	gal::asio::network::communicating::write( gal::asio::message::shared_t msg 
 
 	cv_.notify_one();
 }
-void	gal::asio::network::communicating::close()
+void	gal::network::communicating::close()
 {	
 	GALAXY_DEBUG_FUNCTION;
 
@@ -51,7 +51,7 @@ void	gal::asio::network::communicating::close()
 
 	::close( socket_ );
 }
-void	gal::asio::network::communicating::thread_write_dispatch()
+void	gal::network::communicating::thread_write_dispatch()
 {
 	GALAXY_DEBUG_FUNCTION;
 
@@ -81,14 +81,14 @@ void	gal::asio::network::communicating::thread_write_dispatch()
 		
 		std::thread t(
 				std::bind(
-					&gal::asio::network::communicating::thread_write,
+					&gal::network::communicating::thread_write,
 					this, write_queue_.front() ) );
 		t.detach();
 
 		write_queue_.pop_front();
 	}
 }
-void	gal::asio::network::communicating::thread_write(gal::asio::message::shared_t message)
+void	gal::network::communicating::thread_write(gal::network::message::shared_t message)
 {
 	GALAXY_DEBUG_FUNCTION;
 
@@ -105,7 +105,7 @@ void	gal::asio::network::communicating::thread_write(gal::asio::message::shared_
 		// ???
 	}
 }
-void	gal::asio::network::communicating::thread_read()
+void	gal::network::communicating::thread_read()
 {
 	GALAXY_DEBUG_FUNCTION;
 
@@ -130,7 +130,7 @@ void	gal::asio::network::communicating::thread_read()
 		}
 	}
 }
-void	gal::asio::network::communicating::thread_read_header()
+void	gal::network::communicating::thread_read_header()
 {
 	GALAXY_DEBUG_FUNCTION;
 
@@ -162,7 +162,7 @@ void	gal::asio::network::communicating::thread_read_header()
 	
 	handle_do_read_header();
 }
-void	gal::asio::network::communicating::thread_read_body()
+void	gal::network::communicating::thread_read_body()
 {
 	GALAXY_DEBUG_FUNCTION;
 	
@@ -191,7 +191,7 @@ void	gal::asio::network::communicating::thread_read_body()
 	handle_do_read_body();
 }
 
-void	gal::asio::network::communicating::handle_do_read_header()
+void	gal::network::communicating::handle_do_read_header()
 {
 	GALAXY_DEBUG_FUNCTION;
 
@@ -203,10 +203,10 @@ void	gal::asio::network::communicating::handle_do_read_header()
 	{
 		printf("header decode failed\n");
 
-		std::thread( &gal::asio::network::communicating::close, this ).detach();
+		std::thread(&gal::network::communicating::close, this).detach();
 	}
 }
-void	gal::asio::network::communicating::handle_do_read_body()
+void	gal::network::communicating::handle_do_read_body()
 {
 	GALAXY_DEBUG_FUNCTION;
 
