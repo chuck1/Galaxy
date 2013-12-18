@@ -23,7 +23,7 @@ int main()
 	
 	s(1);
 	
-	s.disconnect(c_2);
+	//s.disconnect(c_2);
 	
 	s(2);
 	

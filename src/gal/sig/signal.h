@@ -18,19 +18,25 @@ namespace gal
 				typedef gal::sig::connection<Args...>	conn_t;
 				typedef std::shared_ptr<conn_t>		shared_t;
 				typedef std::weak_ptr<conn_t>		weak_t;
-				
+
 				shared_t	connect(std::function<int(Args...)> handle)
 				{
-					shared_t connection(new conn_t(handle));
+					printf("%s\n", __PRETTY_FUNCTION__);
 					
+					shared_t connection(new conn_t(handle));
+
 					connections_.push_front(connection);
+
+					printf("size = %i\n", (int)connections_.size());
 					
 					return connection;
 				}
 				int		bring_to_front(shared_t a)
 				{
-					if(disconnect(a)) return 1;
+					printf("%s\n", __PRETTY_FUNCTION__);
 					
+					if(disconnect(a)) return 1;
+
 					connections_.push_front(a);
 
 					return 0;
@@ -43,14 +49,14 @@ namespace gal
 					while(it != connections_.end())
 					{
 						connection = (*it);
-						
+
 						// cleanup
 						if(connection.expired())
 						{
 							connections_.erase(it);
 							continue;
 						}
-						
+
 						if(connection.lock() == b) 
 						{
 							connections_.erase(it);
@@ -64,13 +70,18 @@ namespace gal
 				}
 				void		operator()(Args... args)
 				{
-					auto it = connections_.begin();
-					weak_t connection;
+					printf("%s\n", __PRETTY_FUNCTION__);
+					printf("size = %i\n", (int)connections_.size());
 
+					auto it = connections_.begin();
+					weak_t w;
+					shared_t s;
+					
 					while(it != connections_.end())
 					{
-						connection = (*it);
-						if(connection.expired())
+						w = (*it);
+
+						if(w.expired())
 						{
 							printf("erasing\n");
 							connections_.erase(it);
@@ -78,13 +89,24 @@ namespace gal
 						}
 						else
 						{
-							if(connection.lock()->handle_(args...))
+							s = w.lock();
+							
+							if(s->handle_)
+							{
+								printf("function is null\n");
+							}
+							
+							printf("calling handle\n");
+							int r = s->handle_(args...);
+							if(r)
 							{
 								break;
 							}
 							++it;
 						}
 					}
+
+
 				}
 			private:
 				std::deque<weak_t>	connections_;

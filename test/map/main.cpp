@@ -13,7 +13,7 @@ int main()
 	
 	m.push<foo>(std::shared_ptr<foo>(new foo));
 
-	m.foreach(
+	m.foreach<foo>(
 			std::bind(&foo::fun, std::placeholders::_1)
 		 );
 }

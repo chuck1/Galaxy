@@ -41,17 +41,17 @@ namespace gal
 					return (it->second);
 				}
 			}
-			void				foreach(std::function<void(T*)> func)
+			template <class U> void		foreach(std::function<void(U*)> func)
 			{
-				std::shared_ptr<T> t;
+				std::shared_ptr<U> u;
 				auto it = map_.begin();
 				for(; it != map_.end(); ++it)
 				{
-					t = it->second;
-					//U* u = (U*)t;
-					if(t)
+					u = std::dynamic_pointer_cast<U>(it->second);
+					
+					if(u)
 					{
-						func(t.get());
+						func(u.get());
 					}
 					else
 					{
