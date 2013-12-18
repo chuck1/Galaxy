@@ -9,7 +9,12 @@ int fun(int a, int b)
 }
 int main()
 {
-	gal::sig::signal<int> s;	
+	
+	
+	gal::sig::signal<int> s;
+	
+	
+	
 	std::shared_ptr<gal::sig::connection<int> > c_0;
 	std::shared_ptr<gal::sig::connection<int> > c_1;
 	std::shared_ptr<gal::sig::connection<int> > c_2;
