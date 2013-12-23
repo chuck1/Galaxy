@@ -31,6 +31,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# Escaping for special characters.
+EQUALS = =
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/charles/Programming/C++/galaxy
 
@@ -77,8 +80,8 @@ test_map_OBJECTS = \
 test_map_EXTERNAL_OBJECTS =
 
 test_map: CMakeFiles/test_map.dir/test/map/main.cpp.o
-test_map: libgalaxy.a
 test_map: CMakeFiles/test_map.dir/build.make
+test_map: libgalaxy.a
 test_map: CMakeFiles/test_map.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable test_map"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_map.dir/link.txt --verbose=$(VERBOSE)

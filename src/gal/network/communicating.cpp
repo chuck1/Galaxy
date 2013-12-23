@@ -2,6 +2,9 @@
 #include <deque>
 #include <iostream>
 #include <thread>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/socket.h>
 
 #include <gal/config.h>
 //#include <gal/free.hpp>

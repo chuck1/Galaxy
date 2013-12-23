@@ -4,6 +4,7 @@
 #include <map>
 #include <memory>
 #include <functional>
+#include <stdio.h>
 
 #include <gal/except.h>
 
@@ -18,6 +19,8 @@ namespace gal
 			{}
 			template <class U> int	push(std::shared_ptr<U> u)
 			{
+				printf("%s\n", __PRETTY_FUNCTION__);
+
 				if(u == NULL)
 				{
 					return 1;
@@ -68,7 +71,12 @@ namespace gal
 				auto it = map_.find(a);
 				if(it != map_.end())
 				{
-					map_.erase(a);
+					map_.erase(it);
+				}
+				else
+				{
+					printf("key not found\n");
+					exit(0);
 				}
 			}
 		//private:

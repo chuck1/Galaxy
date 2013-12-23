@@ -6,6 +6,7 @@
 #include <vector>
 #include <iostream>
 #include <thread>
+#include <condition_variable>
 
 #include <sys/socket.h>
 

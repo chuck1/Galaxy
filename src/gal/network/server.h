@@ -81,12 +81,14 @@ namespace gal
 				}
 
 			private:
+				int							socket_;
+
 
 				std::thread						thread_accept_;
 				std::mutex						mutex_;
 
 				unsigned short						local_port_;
-				int							socket_;
+
 
 			public:
 				std::vector<std::shared_ptr<T> >			clients_;
