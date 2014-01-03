@@ -7,10 +7,18 @@ void	process(gal::network::message::shared_t msg);
 
 int port = 0;
 
-class communicating: virtual public gal::network::communicating
+class Server: public gal::network::server
 {
 	public:
-		communicating(int s): gal::network::communicating(s)
+		Server(int,int);
+		void	callback_accept(int);
+};
+class Communicating: virtual public gal::network::communicating
+{
+	public:
+		typedef std::shared_ptr<communicating> shared_t;
+		
+		Communicating(int s): gal::network::communicating(s)
 		{}
 		void	process(gal::network::message::shared_t msg)
 		{
@@ -18,6 +26,35 @@ class communicating: virtual public gal::network::communicating
 			printf("'%s'\n", msg->body());
 		}
 };
+class Client: virtual public gal::network::client, virtual public Communicating
+{
+	public:
+		Client(char const *, unsigned short);
+};
+
+Client::Client(char const * addr, unsigned short port):
+	gal::network::client(addr, port),
+	Communicating(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)),
+	gal::network::communicating(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP))
+{
+}
+
+
+Server::Server(int port,int len):
+	gal::network::server(port,len)
+{
+
+}
+void Server::callback_accept(int s)
+{
+	Communicating::shared_t c(new Communicating(s));
+	
+	c->start();
+	
+	clients_.push_back(c);
+}
+
+
 
 int main(int argc, char ** argv)
 {
@@ -37,7 +74,7 @@ void	client()
 {
 	printf("client\n");
 
-	gal::network::client client("127.0.0.1",port);
+	Client client("127.0.0.1",port);
 
 	char s[128];
 
@@ -48,12 +85,9 @@ void	client()
 		scanf("%s",s);
 
 
-		memcpy(msg->body(), s, strlen(s));
+		msg->set(s, strlen(s));
 
 		printf("body = '%s'\n", msg->body());
-
-		msg->body_length(strlen(s));
-		msg->encode_header();
 
 		client.write(msg);
 	}
@@ -61,9 +95,9 @@ void	client()
 void	server()
 {
 	printf("server\n");
-
-	gal::network::server<communicating> server(port,10);
-
+	
+	Server server(port,10);
+	
 	while(1)
 	{
 

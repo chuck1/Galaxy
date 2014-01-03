@@ -6,32 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/charles/Programming/C++/galaxy/src/gal/except.cpp
-stdio.h
--
-string.h
--
-errno.h
--
-stdlib.h
--
-execinfo.h
--
-cxxabi.h
--
-gal/stack_trace.h
--
-gal/except.h
--
-
-/home/charles/Programming/C++/galaxy/src/gal/flag.cpp
-stdio.h
--
-gal/flag.h
--
-
-/home/charles/Programming/C++/galaxy/src/gal/map.cpp
-
 /home/charles/Programming/C++/galaxy/src/gal/network/client.cpp
 cstdlib
 -
@@ -91,6 +65,8 @@ cstdlib
 -
 cstring
 -
+assert.h
+-
 gal/network/message.h
 -
 
@@ -126,25 +102,7 @@ gal/config.h
 gal/network/server.h
 -
 
-/home/charles/Programming/C++/galaxy/src/gal/stack_trace.cpp
-stdio.h
--
-execinfo.h
--
-cxxabi.h
--
-gal/stack_trace.h
--
-
 src/gal/config.h
-
-src/gal/except.h
-exception
--
-string
--
-
-src/gal/flag.h
 
 src/gal/free.h
 
@@ -220,9 +178,5 @@ netinet/in.h
 gal/config.h
 -
 gal/network/communicating.h
--
-
-src/gal/stack_trace.h
-stdio.h
 -
 

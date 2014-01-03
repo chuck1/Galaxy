@@ -24,7 +24,7 @@ gal::network::communicating::communicating( int socket ):
 void	gal::network::communicating::start()
 {
 	write_thread_ = std::thread(std::bind(&communicating::thread_write_dispatch, this ) );
-	read_thread_ = std::thread(std::bind(&communicating::thread_read_header, this ) );
+	read_thread_ = std::thread(std::bind(&communicating::thread_read, this ) );
 }
 void	gal::network::communicating::write(gal::network::message::shared_t msg)
 {	
@@ -94,18 +94,23 @@ void	gal::network::communicating::thread_write_dispatch()
 void	gal::network::communicating::thread_write(gal::network::message::shared_t message)
 {
 	GALAXY_DEBUG_FUNCTION;
-
+	
 	printf("sending message of length %i\n", (int)message->length());
 	
 	int result = ::send(socket_, message->data(), message->length(), 0 );
 	
 	if ( result < 0 )
 	{
+		perror("sned:");
+		exit(0);
 		/// \todo pass exception to main thread ( or whoever )
 	}
+	
 	if ( result < (int)message->length() )
 	{
 		// ???
+		printf("unknown error\n");
+		exit(0);
 	}
 }
 void	gal::network::communicating::thread_read()
@@ -150,15 +155,16 @@ void	gal::network::communicating::thread_read_header()
 		perror("recv:");
 		exit(0);
 	}
-
+	
 	if ( bytes == 0 )
 	{
-		printf("on data\n");
+		printf("connection is closed\n");
 		exit(0);
 	}
-
+	
 	if ( bytes < message::header_length )
 	{
+		printf("%s\n", __PRETTY_FUNCTION__);
 		printf("not enough data\n");
 		exit(0);
 	}
@@ -178,13 +184,15 @@ void	gal::network::communicating::thread_read_body()
 		perror("recv:");
 		exit(0);
 	}
-
+	
+	
 	if(bytes == 0)
 	{
-		printf("on data\n");
+		printf("connection is closed\n");
 		exit(0);
 	}
-
+	
+	
 	if(bytes < message::header_length)
 	{
 		printf("not enough data\n");
@@ -213,12 +221,7 @@ void	gal::network::communicating::handle_do_read_body()
 {
 	GALAXY_DEBUG_FUNCTION;
 
-	if(bool(process_body_))
-	{
-		printf("process_body_\n");
-
-		process_body_( read_msg_ );
-	}
+	process(read_msg_);
 
 	thread_read_header();
 }

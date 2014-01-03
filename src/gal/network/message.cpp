@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <assert.h>
 
 #include <gal/network/message.h>
 
@@ -33,6 +34,8 @@ std::size_t		gal::network::message::body_length() const
 }
 void			gal::network::message::body_length(std::size_t new_length)
 {
+	assert(new_length <= max_body_length);
+	
 	body_length_ = new_length;
 	if (body_length_ > max_body_length)
 	{
@@ -65,7 +68,21 @@ void			gal::network::message::encode_header()
 	//std::sprintf(header, "%4d", int(body_length_));
 	std::memcpy(data_, (void*)&body_length_, header_length);
 }
+int			gal::network::message::set(void const * const v, unsigned int len) {
+	printf("%s\n", __PRETTY_FUNCTION__);
+	
+	assert(v);
 
+	assert(len <= max_body_length);
+	
+	memcpy(body(), v, len);
+	
+	body_length(len);
+	
+	encode_header();
+	
+	return 0;
+}
 
 
 

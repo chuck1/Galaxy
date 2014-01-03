@@ -17,8 +17,8 @@
 #include <gal/config.h>
 #include <gal/network/server.h>
 
-/*
-gal::asio::network::server::server(unsigned short localPort, int queueLen):
+
+gal::network::server::server(unsigned short localPort, int queueLen):
 	socket_(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)),
 	thread_accept_(std::bind(&server::thread_accept, this)),
 	local_port_(localPort)
@@ -63,13 +63,10 @@ void	gal::network::server::thread_accept()
 		{
 			std::lock_guard<std::mutex> lk(mutex_);
 			
-			communicating::shared_t client(new communicating(s));
-			client->process_body_ = process_body_;
-			client->start();
-			
-			clients_.push_back(client);
+			callback_accept(s);
 		}
 	}
 }
-*/
+
+
 

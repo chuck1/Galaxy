@@ -38,6 +38,7 @@ namespace gal
 				/** thread write
 				 */
 				void					start();
+				virtual void				process(message_t::shared_t) = 0;
 				void					thread_write(message_t::shared_t );
 				/** thread write dispath
 				 */
@@ -66,14 +67,11 @@ namespace gal
 				int					socket_;
 				/** message
 				 */
-				message_t::shared_t		read_msg_;
+				message_t::shared_t			read_msg_;
 				/** message deque
 				 */
-				message_t::deque_t		write_queue_;
+				message_t::deque_t			write_queue_;
 				/** process body
-				 */
-				message_t::function_t		process_body_;
-				/** terminate
 				 */
 				bool					terminate_;
 				/** thread write

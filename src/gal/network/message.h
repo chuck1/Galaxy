@@ -30,11 +30,12 @@ namespace gal
 				/// max body length
 				enum
 				{
-					max_body_length = 512
+					max_body_length = 65536
 				};
 			public:
 				/// ctor
 				message();
+				int			set(void const * const, unsigned int);
 				/// data
 				const char*		data() const;
 				/// data
