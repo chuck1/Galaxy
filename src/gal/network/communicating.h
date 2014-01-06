@@ -62,9 +62,11 @@ namespace gal
 				 */
 				void					handle_do_write();
 				//	protected:
+			protected:			
 				/** socket
 				 */
 				int					socket_;
+			private:
 				/** message
 				 */
 				message_t::shared_t			read_msg_;
@@ -83,10 +85,12 @@ namespace gal
 				/** condition variable
 				 */
 				std::condition_variable			cv_;
+				std::condition_variable			cv_ready_;
 				/** mutex
 				 * mutex for write_queue_ and terminate_
 				 */
 				std::mutex				mutex_;
+				std::mutex				mutex_start_;
 		};
 	}
 }

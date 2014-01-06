@@ -3,6 +3,7 @@
 #include <cstring>
 #include <assert.h>
 
+#include <gal/config.h>
 #include <gal/network/message.h>
 
 gal::network::message::message(): body_length_(0)
@@ -69,7 +70,7 @@ void			gal::network::message::encode_header()
 	std::memcpy(data_, (void*)&body_length_, header_length);
 }
 int			gal::network::message::set(void const * const v, unsigned int len) {
-	printf("%s\n", __PRETTY_FUNCTION__);
+	GALAXY_DEBUG_1_FUNCTION;
 	
 	assert(v);
 

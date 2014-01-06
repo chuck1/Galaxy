@@ -15,8 +15,7 @@ namespace gal
 			public:
 				friend class gal::sig::signal<Args...>;
 			protected:
-				connection(std::function<int(Args...)> handle)
-					:handle_( handle )
+				connection(std::function<int(Args...)> handle):handle_( handle )
 				{
 
 				}
@@ -26,7 +25,7 @@ namespace gal
 
 				}
 			protected:
-				std::function<int(Args...)>	handle_;
+				std::function<int(Args...)> handle_;
 		};
 	}
 }

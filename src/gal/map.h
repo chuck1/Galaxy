@@ -3,6 +3,7 @@
 
 #include <map>
 #include <memory>
+#include <assert.h>
 #include <functional>
 #include <stdio.h>
 
@@ -10,48 +11,44 @@
 
 namespace gal
 {
-	template <class T>
-	class map
+	template <class T> class map
 	{
 		public:
-			map()
-				:next_(0)
-			{}
-			template <class U> int	push(std::shared_ptr<U> u)
+			typedef std::shared_ptr<T> mapped_type;
+			typedef std::map<int,std::shared_ptr<T> > map__;
+			typedef typename map__::iterator iter__;
+			
+			map():next_(0) {}
+			mapped_type& operator[](const int& k)
+			{
+				return map_[k];
+			}
+			template <class U = T> void push_back(std::shared_ptr<U> u)
 			{
 				printf("%s\n", __PRETTY_FUNCTION__);
 
-				if(u == NULL)
-				{
-					return 1;
-				}
-				
-				u->i_ = next_;
-				
+				assert(u);
+
+				u->i(next_);
+
 				map_[next_] = u;
-				
-				return next_++;
+
+				next_++;
 			}
-			std::shared_ptr<T>		at(int a)
+			iter__ find(int a)
 			{
 				auto it = map_.find( a );
-				if(it == map_.end())
-				{
-					return NULL;
-				}
-				else
-				{
-					return (it->second);
-				}
+
+				return it;
 			}
-			template <class U> void		foreach(std::function<void(U*)> func)
+			template <class U> void foreach(std::function<void(U*)> func)
 			{
 				std::shared_ptr<U> u;
 				auto it = map_.begin();
 				for(; it != map_.end(); ++it)
 				{
 					u = std::dynamic_pointer_cast<U>(it->second);
-					
+
 					if(u)
 					{
 						func(u.get());
@@ -62,26 +59,25 @@ namespace gal
 					}
 				}
 			}
-			void					clear()
+			void clear()
 			{
 				map_.clear();
 			}
-			void					erase(int a)
+			iter__ begin()
 			{
-				auto it = map_.find(a);
-				if(it != map_.end())
-				{
-					map_.erase(it);
-				}
-				else
-				{
-					printf("key not found\n");
-					exit(0);
-				}
+				return map_.begin();
 			}
-		//private:
-			std::map<int,std::shared_ptr<T> >	map_;
-			int					next_;
+			iter__ end()
+			{
+				return map_.end();
+			}
+			void erase(iter__ it)
+			{
+				map_.erase(it);
+			}
+			//private:
+			map__		map_;
+			int		next_;
 	};	
 }
 

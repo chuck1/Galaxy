@@ -23,13 +23,13 @@ gal::network::server::server(unsigned short localPort, int queueLen):
 	thread_accept_(std::bind(&server::thread_accept, this)),
 	local_port_(localPort)
 {
-	GALAXY_DEBUG_FUNCTION;
+	GALAXY_DEBUG_0_FUNCTION;
 
 
 }
 void	gal::network::server::thread_accept()
 {
-	GALAXY_DEBUG_FUNCTION;
+	GALAXY_DEBUG_0_FUNCTION;
 
 	sockaddr_in addr;
 
@@ -67,6 +67,13 @@ void	gal::network::server::thread_accept()
 		}
 	}
 }
-
+void gal::network::server::write(msg_t msg) {
+	
+	for(auto it = clients_.begin(); it != clients_.end(); ++it)
+	{
+		(*it)->write(msg);
+	}
+	
+}
 
 

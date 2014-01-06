@@ -41,7 +41,7 @@ gal::network::client::client(char const * foreign_address, unsigned short foreig
 	foreign_port_(foreign_port),
 	communicating(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP))
 {
-	GALAXY_DEBUG_FUNCTION;
+	GALAXY_DEBUG_0_FUNCTION;
 	
 	sockaddr_in destAddr;
 
@@ -56,7 +56,7 @@ gal::network::client::client(char const * foreign_address, unsigned short foreig
 	
 	printf("connected\n");
 	
-	start();
+	//start();
 	
 	//do_connect(endpoint_iterator);
 /*	

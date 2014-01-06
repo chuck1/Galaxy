@@ -31,10 +31,12 @@ namespace gal
 		{
 			public:
 				typedef std::shared_ptr<gal::network::communicating> comm_t;
-
+				typedef std::shared_ptr<gal::network::message> msg_t;
+				
 				server(unsigned short localPort, int queueLen);
 				void			thread_accept();
 				virtual void		callback_accept(int) = 0;
+				void			write(msg_t);
 			private:
 				int					socket_;
 				
