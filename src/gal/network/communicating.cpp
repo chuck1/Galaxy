@@ -23,17 +23,17 @@ gal::network::communicating::communicating( int socket ):
 }
 void	gal::network::communicating::start()
 {
-	printf("lock mutex_start_\n");
+	//printf("lock mutex_start_\n");
 	std::unique_lock<std::mutex> lk(mutex_start_);
 	
 	write_thread_ = std::thread(std::bind(&communicating::thread_write_dispatch, this ) );
 	
-	printf("wait for cv_ready_\n");
+	//printf("wait for cv_ready_\n");
 	cv_ready_.wait(lk);
-	printf("cv_ready_ notified\n");
-
+	
+	//printf("cv_ready_ notified\n");
+	
 	read_thread_ = std::thread(std::bind(&communicating::thread_read, this ) );
-
 }
 void	gal::network::communicating::write(gal::network::message::shared_t msg)
 {	
@@ -45,7 +45,7 @@ void	gal::network::communicating::write(gal::network::message::shared_t msg)
 		write_queue_.push_back( msg );
 	}
 	
-	printf("notify one\n");
+	//printf("notify one\n");
 	
 	cv_.notify_one();
 }
@@ -69,22 +69,22 @@ void	gal::network::communicating::thread_write_dispatch()
 {
 	GALAXY_DEBUG_0_FUNCTION;
 	
-	printf("lock mutex_start_\n");
+	//printf("lock mutex_start_\n");
+
 	mutex_start_.lock();
-	printf("unlock mutex_start_\n");
+
+	//printf("unlock mutex_start_\n");
 	mutex_start_.unlock();
 	
-	
-	printf("lock mutex_\n");
+	//printf("lock mutex_\n");
 	std::unique_lock<std::mutex> lk(mutex_);
-
 	
-	printf("cv_ready_.notify_all()\n");
+	//printf("cv_ready_.notify_all()\n");
 	cv_ready_.notify_all();
 
 	while ( 1 )
 	{
-		printf("wait\n");
+		//printf("wait\n");
 
 		do
 		{
@@ -92,7 +92,7 @@ void	gal::network::communicating::thread_write_dispatch()
 		}
 		while ( write_queue_.empty() && !terminate_ );
 
-		printf("notified\n");
+		//printf("notified\n");
 
 		//cv_.wait( lk, [&] { return ( !write_queue_.empty() || terminate_ ); } );
 
@@ -102,7 +102,7 @@ void	gal::network::communicating::thread_write_dispatch()
 			return;
 		}		
 
-		printf("create write thread\n");
+		//printf("create write thread\n");
 
 		std::thread t(
 				std::bind(
@@ -114,11 +114,10 @@ void	gal::network::communicating::thread_write_dispatch()
 		write_queue_.pop_front();
 	}
 }
-void	gal::network::communicating::thread_write(gal::network::message::shared_t message)
-{
+void	gal::network::communicating::thread_write(gal::network::message::shared_t message) {
 	GALAXY_DEBUG_1_FUNCTION;
-
-	printf("sending message of length %i\n", (int)message->length());
+	
+	//printf("sending message of length %i\n", (int)message->length());
 
 	int result = ::send(socket_, message->data(), message->length(), 0 );
 
@@ -168,8 +167,9 @@ void	gal::network::communicating::thread_read_header()
 	//if ( !socket_->is_open() ) exit(0);//gal::cerr << "SOCKET NOT OPEN" << endl;
 	if ( !read_msg_->data() ) exit(0); //gal::cerr << "WTF!" << std::endl;
 
-
-	printf("waiting for %i bytes\n", message::header_length);
+	
+	//printf("waiting for %i bytes\n", message::header_length);
+	
 	// wail until all data is available
 	int bytes = ::recv(socket_, read_msg_->data(), message::header_length, MSG_WAITALL);
 
@@ -198,7 +198,7 @@ void	gal::network::communicating::thread_read_body()
 {
 	GALAXY_DEBUG_1_FUNCTION;
 
-	printf("waiting for %i bytes\n", (int)read_msg_->body_length());
+	//printf("waiting for %i bytes\n", (int)read_msg_->body_length());
 	// wail until all data is available
 	int bytes = ::recv(socket_, read_msg_->body(), read_msg_->body_length(), MSG_WAITALL);
 

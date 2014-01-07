@@ -61,6 +61,8 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/charles/Programming/C++/galaxy/src/gal/network/communicating.h"
     "/home/charles/Programming/C++/galaxy/src/gal/network/server.h"
     "/home/charles/Programming/C++/galaxy/src/gal/network/client.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/network/vector.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/network/serializeable.h"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

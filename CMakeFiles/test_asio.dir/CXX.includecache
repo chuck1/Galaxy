@@ -13,6 +13,8 @@ gal/network/server.h
 -
 
 src/gal/config.h
+memory
+-
 
 src/gal/network/client.h
 cstdlib

@@ -9,6 +9,14 @@
 /home/charles/Programming/C++/galaxy/test/map/main.cpp
 gal/gal.h
 -
+gal/flag.h
+-
+gal/network/vector.h
+-
+
+src/gal/config.h
+memory
+-
 
 src/gal/except.h
 exception
@@ -36,5 +44,25 @@ functional
 stdio.h
 -
 gal/except.h
+-
+
+src/gal/network/message.h
+cstdio
+-
+cstdlib
+-
+cstring
+-
+memory
+-
+deque
+-
+
+src/gal/network/vector.h
+vector
+-
+gal/config.h
+-
+gal/network/message.h
 -
 

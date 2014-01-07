@@ -3,7 +3,10 @@
 
 CMakeFiles/test_map.dir/test/map/main.cpp.o
  /home/charles/Programming/C++/galaxy/test/map/main.cpp
+ src/gal/config.h
  src/gal/except.h
  src/gal/flag.h
  src/gal/gal.h
  src/gal/map.h
+ src/gal/network/message.h
+ src/gal/network/vector.h

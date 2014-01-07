@@ -5,9 +5,6 @@ CMakeFiles/galaxy.dir/src/gal/except.cpp.o
  /home/charles/Programming/C++/galaxy/src/gal/except.cpp
  src/gal/except.h
  src/gal/stack_trace.h
-CMakeFiles/galaxy.dir/src/gal/flag.cpp.o
- /home/charles/Programming/C++/galaxy/src/gal/flag.cpp
- src/gal/flag.h
 CMakeFiles/galaxy.dir/src/gal/map.cpp.o
  /home/charles/Programming/C++/galaxy/src/gal/map.cpp
 CMakeFiles/galaxy.dir/src/gal/network/client.cpp.o
@@ -24,6 +21,7 @@ CMakeFiles/galaxy.dir/src/gal/network/communicating.cpp.o
  src/gal/network/message.h
 CMakeFiles/galaxy.dir/src/gal/network/message.cpp.o
  /home/charles/Programming/C++/galaxy/src/gal/network/message.cpp
+ src/gal/config.h
  src/gal/network/message.h
 CMakeFiles/galaxy.dir/src/gal/network/server.cpp.o
  /home/charles/Programming/C++/galaxy/src/gal/network/server.cpp

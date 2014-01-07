@@ -8,7 +8,6 @@ set(PROJECT_BINARY_DIR lib)
 set(PROJECT_SOURCE_DIR src)
 
 set(src 
-	src/gal/flag.cpp
 	src/gal/map.cpp
 	src/gal/except.cpp
 	src/gal/stack_trace.cpp
@@ -47,6 +46,8 @@ set(files
 	${PROJECT_SOURCE_DIR}/gal/network/communicating.h
 	${PROJECT_SOURCE_DIR}/gal/network/server.h
 	${PROJECT_SOURCE_DIR}/gal/network/client.h
+	${PROJECT_SOURCE_DIR}/gal/network/vector.h
+	${PROJECT_SOURCE_DIR}/gal/network/serializeable.h
 )
 
 install(FILES ${files} DESTINATION include/gal/network)

@@ -35,7 +35,10 @@ namespace gal
 			public:
 				/// ctor
 				message();
-				int			set(void const * const, unsigned int);
+				void			set(void const * const, unsigned int);
+				void			reset_head();
+				void			write(void const * const, size_t);
+				void			read(void * const, size_t);
 				/// data
 				const char*		data() const;
 				/// data
@@ -57,6 +60,7 @@ namespace gal
 			private:
 				/// data
 				char			data_[header_length + max_body_length];
+				char*			head_;
 				/// body length
 				std::size_t		body_length_;
 		};

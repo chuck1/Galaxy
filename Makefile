@@ -212,30 +212,6 @@ src/gal/except.cpp.s:
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/except.cpp.s
 .PHONY : src/gal/except.cpp.s
 
-src/gal/flag.o: src/gal/flag.cpp.o
-.PHONY : src/gal/flag.o
-
-# target to build an object file
-src/gal/flag.cpp.o:
-	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/flag.cpp.o
-.PHONY : src/gal/flag.cpp.o
-
-src/gal/flag.i: src/gal/flag.cpp.i
-.PHONY : src/gal/flag.i
-
-# target to preprocess a source file
-src/gal/flag.cpp.i:
-	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/flag.cpp.i
-.PHONY : src/gal/flag.cpp.i
-
-src/gal/flag.s: src/gal/flag.cpp.s
-.PHONY : src/gal/flag.s
-
-# target to generate assembly for a file
-src/gal/flag.cpp.s:
-	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/flag.cpp.s
-.PHONY : src/gal/flag.cpp.s
-
 src/gal/map.o: src/gal/map.cpp.o
 .PHONY : src/gal/map.o
 
@@ -471,9 +447,6 @@ help:
 	@echo "... src/gal/except.o"
 	@echo "... src/gal/except.i"
 	@echo "... src/gal/except.s"
-	@echo "... src/gal/flag.o"
-	@echo "... src/gal/flag.i"
-	@echo "... src/gal/flag.s"
 	@echo "... src/gal/map.o"
 	@echo "... src/gal/map.i"
 	@echo "... src/gal/map.s"

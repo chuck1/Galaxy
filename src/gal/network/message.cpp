@@ -8,6 +8,7 @@
 
 gal::network::message::message(): body_length_(0)
 {
+	head_ = body();
 }
 const char*		gal::network::message::data() const
 {
@@ -53,7 +54,7 @@ bool			gal::network::message::decode_header()
 	
 	//body_length_ = std::atoi(header);
 	
-	printf("decoded header: %X %i\n", (unsigned char)body_length_, (int)body_length_);
+	//printf("decoded header: %X %i\n", (unsigned char)body_length_, (int)body_length_);
 	
 	if (body_length_ > max_body_length)
 	{
@@ -69,23 +70,44 @@ void			gal::network::message::encode_header()
 	//std::sprintf(header, "%4d", int(body_length_));
 	std::memcpy(data_, (void*)&body_length_, header_length);
 }
-int			gal::network::message::set(void const * const v, unsigned int len) {
+void gal::network::message::set(void const * const v, unsigned int len) {
 	GALAXY_DEBUG_1_FUNCTION;
 	
 	assert(v);
 
-	assert(len <= max_body_length);
+	assert(len < max_body_length);
 	
 	memcpy(body(), v, len);
 	
 	body_length(len);
-	
 	encode_header();
-	
-	return 0;
 }
-
-
+void gal::network::message::reset_head() {
+	head_ = body();
+}
+void gal::network::message::write(void const * const v, size_t len) {
+	
+	assert(v);
+	
+	assert((head_ + len) < (body() + max_body_length));
+	
+	memcpy(head_, v, len);
+	
+	head_ += len;
+	
+	body_length(len);
+	encode_header();
+}
+void gal::network::message::read(void * const v, size_t len) {
+	
+	assert(v);
+	
+	assert((head_ + len) < (body() + max_body_length));
+	
+	memcpy(v, head_, len);
+	
+	head_ += len;
+}
 
 
 
