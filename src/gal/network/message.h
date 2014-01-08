@@ -13,7 +13,7 @@ namespace gal
 	namespace network
 	{
 		/// message
-		class message
+		class message: public std::enable_shared_from_this<message>
 		{
 			public:
 				/// shared__t
