@@ -13,6 +13,8 @@ gal/flag.h
 -
 gal/network/vector.h
 -
+gal/network/message_ext.h
+-
 
 src/gal/config.h
 memory
@@ -56,6 +58,12 @@ cstring
 memory
 -
 deque
+-
+
+src/gal/network/message_ext.h
+assert.h
+-
+gal/network/message.h
 -
 
 src/gal/network/vector.h

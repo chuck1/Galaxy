@@ -105,6 +105,8 @@ gal/network/server.h
 -
 
 src/gal/config.h
+memory
+-
 
 src/gal/free.h
 

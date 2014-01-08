@@ -1,6 +1,7 @@
 #include <gal/gal.h>
 #include <gal/flag.h>
 #include <gal/network/vector.h>
+#include <gal/network/message_ext.h>
 
 class foo
 {
@@ -29,6 +30,11 @@ int main()
 	
 	bar b;
 	b.set(0);
+	
+	
+	std::shared_ptr<gal::network::message_ext<>> msg;
+	
+	msg->write_expand();
 }
 
 
