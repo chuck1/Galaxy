@@ -5,6 +5,7 @@
 
 #include <gal/config.h>
 #include <gal/network/message.h>
+#include <gal/network/message_ext.h>
 
 namespace gal
 {
@@ -15,85 +16,106 @@ namespace gal
 			public:
 				typedef std::vector<T> vec;
 
-				vector(): size_(0) {}
-				void	write(message_shared msg)
-				{
-					size_ = vector_.size();
-
-					msg->write(&size_, sizeof(typename vec::size_type));
-
+				vector() {}
+				void write(message_shared msg) {
+					
+					size_t s = vec_.size();
+					
+					msg->write(&s, sizeof(typename vec::size_type));
+					
 					T t;
-					for(auto it = vector_.begin(); it != vector_.end(); ++it)
+					for(auto it = vec_.begin(); it != vec_.end(); ++it)
 					{
 						t = *it;
-
+						
 						msg->write(&t, sizeof(T));
 					}
 				}
-				void	read(message_shared msg)
-				{
-					msg->read(&size_, sizeof(typename vec::size_type));
-
+				void read(message_shared msg) {
+					
+					size_t s;
+					
+					msg->read(&s, sizeof(typename vec::size_type));
+					
 					T t;
-					vector_.clear();
-					for(typename vec::size_type i = 0; i < size_; ++i)
+					vec_.clear();
+					for(typename vec::size_type i = 0; i < s; ++i)
 					{
 						msg->read(&t, sizeof(T));
 
-						vector_.push_back(t);
+						vec_.push_back(t);
 					}
 				}
-				size_t size()
-				{	
-					return (sizeof(typename vec::size_type) + (vector_.size() * sizeof(T)));
+				size_t size() {	
+					size_t s;
+					s += sizeof(typename vec::size_type);
+					s += (vec_.size() * sizeof(T));
+					return s;
 				}
-
-				vec		vector_;
-				typename vec::size_type	size_;
+				
+				vec vec_;
 		};
-		template <class T> class vector_ext
+		template <class... Args> class vector_ext
 		{
 			public:
-				typedef std::shared_ptr<T> Ts;
-				typedef std::vector<Ts> vec;
-				
+				typedef std::tuple<std::shared_ptr<Args>...> tup;
+				typedef std::vector<tup> vec;
+				typedef typename vec::size_type size_type;
 
-				vector(): size_(0) {}
+
+
+				vector_ext(): size_(0) {}
 				void	write(message_shared msg)
 				{
-					size_ = vector_.size();
-					
-					msg->write(&size_, sizeof(typename vec::size_type));
-					
-					Ts t;
-					for(auto it = vector_.begin(); it != vector_.end(); ++it)
+					size_ = vec_.size();
+
+					msg->write(&size_, sizeof(size_type));
+
+					tup t;
+					for(auto it = vec_.begin(); it != vec_.end(); ++it)
 					{
 						t = *it;
 						assert(t);
-						
+
 						t->write(msg);
 					}
 				}
+				void	reset(tup t) {
+					
+				}
 				void	read(message_shared msg)
 				{
-					msg->read(&size_, sizeof(typename vec::size_type));
+					size_type s;
 
-					Ts t;
-					vector_.clear();
+					msg->read(&s, sizeof(typename vec::size_type));
+
+					tup t;
+					vec_.clear();
 					for(typename vec::size_type i = 0; i < size_; ++i)
 					{
 						t.reset(new T);
-						
+
 						t->read(msg);
-						
-						vector_.push_back(t);
+
+						vec_.push_back(t);
 					}
 				}
-				
-				vec		vector_;
-				typename vec::size_type	size_;
+				size_t	size()
+				{
+					size_t s = sizeof(typename vec::size_type);
+
+					T_s t;
+					for(auto it = vec_.begin(); it != vec_.end(); ++it) {
+						t = *it;
+						assert(t);
+						s += t->size();
+					}
+				}
+
+				vec				vec_;
+				typename vec::size_type		size_;
 		};
-		
+
 	}
 }
 
