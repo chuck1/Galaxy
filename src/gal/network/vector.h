@@ -9,6 +9,11 @@
 
 namespace gal
 {
+	
+	template<int... S> void reset_tup(seq<S...>, tup t) {
+                pass{(reset(std::get<S>(t)), 1)...};
+        }
+	
 	namespace network
 	{
 		template <class T> class vector
@@ -60,29 +65,38 @@ namespace gal
 			public:
 				typedef std::tuple<std::shared_ptr<Args>...> tup;
 				typedef std::vector<tup> vec;
+				typedef typename gens<sizeof...(Args)>::type seq_type;
 				typedef typename vec::size_type size_type;
 
 
 
-				vector_ext(): size_(0) {}
+				vector_ext() {}
+				
+				template<int... S> void write_expand(seq<S...>, tup t, message_shared msg) {
+                			pass{(std::get<S>(t)->write(msg), 1)...};
+        			}
+				template<int... S> void read_expand(seq<S...>, tup t, message_shared msg) {
+                			pass{(std::get<S>(t)->read(msg), 1)...};
+        			}
+				template<int... S> size_t size_expand(seq<S...>, tup t, message_shared msg) {
+					size_t s = 0;
+                			pass{(s += std::get<S>(t)->write(msg), 1)...};
+        			}
+				
+				
 				void	write(message_shared msg)
 				{
-					size_ = vec_.size();
-
-					msg->write(&size_, sizeof(size_type));
-
-					tup t;
-					for(auto it = vec_.begin(); it != vec_.end(); ++it)
-					{
-						t = *it;
-						assert(t);
-
-						t->write(msg);
+					size_type s = vec_.size();
+					
+					msg->write(&s, sizeof(size_type));
+					
+					seq_type s;
+					for(auto it = vec_.begin(); it != vec_.end(); ++it) {
+						write_expand(s, t, msg);
 					}
 				}
-				void	reset(tup t) {
-					
-				}
+				
+				
 				void	read(message_shared msg)
 				{
 					size_type s;
@@ -103,7 +117,7 @@ namespace gal
 				size_t	size()
 				{
 					size_t s = sizeof(typename vec::size_type);
-
+					
 					T_s t;
 					for(auto it = vec_.begin(); it != vec_.end(); ++it) {
 						t = *it;
@@ -113,7 +127,6 @@ namespace gal
 				}
 
 				vec				vec_;
-				typename vec::size_type		size_;
 		};
 
 	}
