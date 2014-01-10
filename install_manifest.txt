@@ -1,5 +1,6 @@
 /home/charles/usr/lib/libgalaxy.a
 /home/charles/usr/include/gal/config.h
+/home/charles/usr/include/gal/util.h
 /home/charles/usr/include/gal/gal.h
 /home/charles/usr/include/gal/flag.h
 /home/charles/usr/include/gal/map.h

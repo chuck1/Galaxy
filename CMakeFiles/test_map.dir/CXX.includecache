@@ -63,6 +63,8 @@ deque
 src/gal/network/message_ext.h
 assert.h
 -
+gal/util.h
+-
 gal/network/message.h
 -
 
@@ -72,5 +74,11 @@ vector
 gal/config.h
 -
 gal/network/message.h
+-
+gal/network/message_ext.h
+-
+
+src/gal/util.h
+memory
 -
 

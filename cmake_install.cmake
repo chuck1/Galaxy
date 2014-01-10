@@ -39,6 +39,7 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal" TYPE FILE FILES
     "/home/charles/Programming/C++/galaxy/src/gal/config.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/util.h"
     "/home/charles/Programming/C++/galaxy/src/gal/gal.h"
     "/home/charles/Programming/C++/galaxy/src/gal/flag.h"
     "/home/charles/Programming/C++/galaxy/src/gal/map.h"

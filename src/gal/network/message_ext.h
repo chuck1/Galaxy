@@ -3,44 +3,17 @@
 
 #include <assert.h>
 
+#include <gal/util.h>
 #include <gal/network/message.h>
 
 namespace gal {
-	
-	template<int ...> struct seq { };
-	
-	template<int N, int ...S> struct gens : gens<N-1, N-1, S...> { };
-	
-	template<int ...S> struct gens<0, S...> { typedef seq<S...> type; };
-	
-	// for calling functions
-	struct pass { template<typename ...T> pass(T...) {} };
-	
-	// for allocating tuple of pointers
-	
-	template<typename T> void reset(std::shared_ptr<T>& t) {
-		t.reset(new T);
-	}
-	
-	template<int... S, typename... Args> void reset_tuple(seq<S...>, std::tuple<Args...>& tup) {
-	        pass{(reset(std::get<S>(tup)), 1)...};
-	}
-	
-	template<typename... Args> void reset_tuple(std::tuple<Args...>& tup) {
-	        typename gens<sizeof...(Args)>::type s;
-	        reset_tuple(s, tup);
-	}
-
 	namespace network {
-
 		template<typename... Args> struct message_ext {
 			
 			typedef typename gens<sizeof...(Args)>::type seq_t;
 			
 			message_ext() {
-				
-				seq_t s;
-				reset_tup(s);
+				reset_tuple(tup_);
 			}
 			
 			
@@ -53,6 +26,7 @@ namespace gal {
 			template<int... S> size_t size_expand(seq<S...>) {
 				size_t size = 0;
 				pass{(size += std::get<S>(tup_)->size(), 1)...};
+				return size;
 			}
 			
 			

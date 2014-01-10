@@ -29,6 +29,7 @@ install(TARGETS galaxy DESTINATION lib)
 
 set(files
 	${PROJECT_SOURCE_DIR}/gal/config.h
+	${PROJECT_SOURCE_DIR}/gal/util.h
 	${PROJECT_SOURCE_DIR}/gal/gal.h
 	${PROJECT_SOURCE_DIR}/gal/flag.h
 	${PROJECT_SOURCE_DIR}/gal/map.h
