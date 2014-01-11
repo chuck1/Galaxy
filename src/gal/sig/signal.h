@@ -6,6 +6,7 @@
 #include <memory>
 #include <deque>
 
+#include <gal/config.h>
 #include <gal/sig/connection.h>
 
 namespace gal
@@ -21,19 +22,19 @@ namespace gal
 
 				shared_t	connect(std::function<int(Args...)> handle)
 				{
-					printf("%s\n", __PRETTY_FUNCTION__);
+					GALAXY_DEBUG_1_FUNCTION;
 					
 					shared_t connection(new conn_t(handle));
 
 					connections_.push_front(connection);
 
-					printf("size = %i\n", (int)connections_.size());
+					//printf("size = %i\n", (int)connections_.size());
 					
 					return connection;
 				}
 				int		bring_to_front(shared_t a)
 				{
-					printf("%s\n", __PRETTY_FUNCTION__);
+					GALAXY_DEBUG_1_FUNCTION;
 					
 					if(disconnect(a)) return 1;
 
@@ -65,13 +66,11 @@ namespace gal
 						++it;
 					}
 
-					printf("connection not found\n");
+					//printf("connection not found\n");
 					return 1;
 				}
 				void		operator()(Args... args)
 				{
-					printf("%s\n", __PRETTY_FUNCTION__);
-					printf("size = %i\n", (int)connections_.size());
 
 					auto it = connections_.begin();
 					weak_t w;
@@ -83,7 +82,7 @@ namespace gal
 
 						if(w.expired())
 						{
-							printf("erasing\n");
+							//printf("erasing\n");
 							connections_.erase(it);
 							continue;
 						}
@@ -93,13 +92,12 @@ namespace gal
 							
 							if(s->handle_)
 							{
-								printf("function is null\n");
+								//printf("function is null\n");
 							}
 							
-							printf("calling handle\n");
+							//printf("calling handle\n");
 							int r = s->handle_(args...);
-							if(r)
-							{
+							if(r) {
 								break;
 							}
 							++it;

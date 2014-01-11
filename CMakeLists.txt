@@ -44,12 +44,12 @@ install(FILES ${PROJECT_SOURCE_DIR}/gal/sig/connection.h DESTINATION include/gal
 
 set(files
 	${PROJECT_SOURCE_DIR}/gal/network/message.h
-	${PROJECT_SOURCE_DIR}/gal/network/message_ext.h
 	${PROJECT_SOURCE_DIR}/gal/network/communicating.h
 	${PROJECT_SOURCE_DIR}/gal/network/server.h
 	${PROJECT_SOURCE_DIR}/gal/network/client.h
 	${PROJECT_SOURCE_DIR}/gal/network/vector.h
 	${PROJECT_SOURCE_DIR}/gal/network/serializeable.h
+	${PROJECT_SOURCE_DIR}/gal/network/serial.h
 )
 
 install(FILES ${files} DESTINATION include/gal/network)

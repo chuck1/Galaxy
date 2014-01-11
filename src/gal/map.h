@@ -16,17 +16,15 @@ namespace gal
 		public:
 			typedef std::shared_ptr<T> mapped_type;
 			typedef std::map<int,std::shared_ptr<T> > map__;
-			typedef typename map__::iterator iter__;
+			typedef typename map__::iterator iter;
 			
 			map():next_(0) {}
-			mapped_type& operator[](const int& k)
-			{
+			mapped_type& operator[](const int& k) {
 				return map_[k];
 			}
-			template <class U = T> void push_back(std::shared_ptr<U> u)
-			{
-				printf("%s\n", __PRETTY_FUNCTION__);
-
+			template <class U = T> void push_back(std::shared_ptr<U> u) {
+				//printf("%s\n", __PRETTY_FUNCTION__);
+				
 				assert(u);
 
 				u->i(next_);
@@ -35,7 +33,7 @@ namespace gal
 
 				next_++;
 			}
-			iter__ find(int a)
+			iter find(int a)
 			{
 				auto it = map_.find( a );
 
@@ -63,17 +61,18 @@ namespace gal
 			{
 				map_.clear();
 			}
-			iter__ begin()
+			iter begin()
 			{
 				return map_.begin();
 			}
-			iter__ end()
+			iter end()
 			{
 				return map_.end();
 			}
-			void erase(iter__ it)
+			iter erase(iter it)
 			{
-				map_.erase(it);
+				it = map_.erase(it);
+				return it;
 			}
 			//private:
 			map__		map_;

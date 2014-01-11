@@ -59,12 +59,12 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/gal/network" TYPE FILE FILES
     "/home/charles/Programming/C++/galaxy/src/gal/network/message.h"
-    "/home/charles/Programming/C++/galaxy/src/gal/network/message_ext.h"
     "/home/charles/Programming/C++/galaxy/src/gal/network/communicating.h"
     "/home/charles/Programming/C++/galaxy/src/gal/network/server.h"
     "/home/charles/Programming/C++/galaxy/src/gal/network/client.h"
     "/home/charles/Programming/C++/galaxy/src/gal/network/vector.h"
     "/home/charles/Programming/C++/galaxy/src/gal/network/serializeable.h"
+    "/home/charles/Programming/C++/galaxy/src/gal/network/serial.h"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

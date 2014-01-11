@@ -9,9 +9,9 @@
 /home/charles/usr/include/gal/sig/signal.h
 /home/charles/usr/include/gal/sig/connection.h
 /home/charles/usr/include/gal/network/message.h
-/home/charles/usr/include/gal/network/message_ext.h
 /home/charles/usr/include/gal/network/communicating.h
 /home/charles/usr/include/gal/network/server.h
 /home/charles/usr/include/gal/network/client.h
 /home/charles/usr/include/gal/network/vector.h
 /home/charles/usr/include/gal/network/serializeable.h
+/home/charles/usr/include/gal/network/serial.h

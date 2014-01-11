@@ -7,10 +7,10 @@
 namespace gal {
         namespace network {
                 template<typename T> struct serial {
-                        void write(gal::message::message_shared msg) {
+                        void write(gal::network::message_shared msg) {
                                 msg->write(this, sizeof(T));
                         }
-                        void read(gal::message::message_shared msg) {
+                        void read(gal::network::message_shared msg) {
                                 msg->read(this, sizeof(T));
                         }
                         size_t size() {
@@ -20,7 +20,8 @@ namespace gal {
                 
                 
                 template<typename... Args> struct serial_ext {
-                        
+			typedef typename gens<sizeof...(Args)>::type seq_type;                  
+      			
                         typedef std::tuple<std::shared_ptr<Args>...> tuple;
                         
                         serial_ext() {
@@ -39,19 +40,20 @@ namespace gal {
                         template<int... S> size_t size_expand(seq<S...>) {
                                 size_t size = 0;
                                 pass{(size += std::get<S>(tup_)->size(), 1)...};
+				return size;
                         }
                         
                         
                         void write(message_shared msg) {
-                                seq_t s;
+                                seq_type s;
                                 write_expand(s, msg);
                         }
                         void read(message_shared msg) {
-                                seq_t s;
+                                seq_type s;
                                 read_expand(s, msg);
                         }
                         size_t size() {
-                                seq_t s;
+                                seq_type s;
                                 return size_expand(s);
                         }
                         
@@ -59,7 +61,7 @@ namespace gal {
                         
                         
                         tuple tup_;
-                }
+                };
         }
 }
 

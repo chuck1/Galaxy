@@ -1,7 +1,7 @@
 #include <gal/gal.h>
 #include <gal/flag.h>
 #include <gal/network/vector.h>
-#include <gal/network/message_ext.h>
+#include <gal/network/serial.h>
 
 class foo
 {
@@ -32,7 +32,7 @@ template<int i> struct ser {
 	}
 };
 
-typedef gal::network::message_ext<gal::network::vector_ext<ser<0>>> vec;
+typedef gal::network::serial_ext<gal::network::vector_ext<ser<0>>> ser_ext;
 
 int main()
 {
@@ -46,11 +46,11 @@ int main()
 	// message
 	gal::network::message_shared msg(new gal::network::message);
 	
-	std::shared_ptr<gal::network::message_ext<vec>> me;
+	std::shared_ptr<ser_ext> s;
 	
-	me->write(msg);
-	me->read(msg);
-	me->size();
+	s->write(msg);
+	s->read(msg);
+	s->size();
 }
 
 

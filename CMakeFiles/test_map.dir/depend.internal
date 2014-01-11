@@ -9,6 +9,6 @@ CMakeFiles/test_map.dir/test/map/main.cpp.o
  src/gal/gal.h
  src/gal/map.h
  src/gal/network/message.h
- src/gal/network/message_ext.h
+ src/gal/network/serial.h
  src/gal/network/vector.h
  src/gal/util.h
