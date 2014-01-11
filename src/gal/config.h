@@ -12,6 +12,8 @@ namespace gal
 	{
 		class message;
 		typedef std::shared_ptr<message> message_shared;
+		typedef std::shared_ptr<message> message_s;
+
 	}
 }
 

@@ -13,5 +13,4 @@
 /home/charles/usr/include/gal/network/server.h
 /home/charles/usr/include/gal/network/client.h
 /home/charles/usr/include/gal/network/vector.h
-/home/charles/usr/include/gal/network/serializeable.h
 /home/charles/usr/include/gal/network/serial.h

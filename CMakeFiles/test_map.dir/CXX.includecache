@@ -61,6 +61,10 @@ deque
 -
 
 src/gal/network/serial.h
+gal/config.h
+-
+gal/util.h
+-
 gal/network/message.h
 -
 

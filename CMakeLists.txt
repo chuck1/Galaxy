@@ -48,7 +48,6 @@ set(files
 	${PROJECT_SOURCE_DIR}/gal/network/server.h
 	${PROJECT_SOURCE_DIR}/gal/network/client.h
 	${PROJECT_SOURCE_DIR}/gal/network/vector.h
-	${PROJECT_SOURCE_DIR}/gal/network/serializeable.h
 	${PROJECT_SOURCE_DIR}/gal/network/serial.h
 )
 

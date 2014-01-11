@@ -32,7 +32,9 @@ template<int i> struct ser {
 	}
 };
 
+typedef gal::network::serial<int> ser0;
 typedef gal::network::serial_ext<gal::network::vector_ext<ser<0>>> ser_ext;
+typedef gal::network::vector_ext<int,float> vec0;
 
 int main()
 {
