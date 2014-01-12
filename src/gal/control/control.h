@@ -3,30 +3,31 @@
 
 #include <math/vec3.h>
 
-namespace gal
-{
-	namespace control
-	{
-		template <typename T> class value;
-		{
+namespace gal {
+	namespace control {
+		class control {
 			public:
-				void				subscribe(sig::signal&);
-			protected:
-				std::vector<sig::connection*>	conn_;
-				float				v;
-		};
+				control();
+				float	f(float, float, double);
+				float	f(float, double);
+				
+				int	t;
+				
+				double	time0;
+				double	time1;
 
-		class control
-		{
-			public:
 
-				math::vec3	x;
-				math::vec3	u;
-				math::vec3	a;
+				float	e0;
+				float	e1;
 
-				math::vec3	o;
-				math::vec3	w;
-				math::vec3	t;
+				float	x0;
+				float	x1;
+				float	v;
+				float	i;
+				
+				float	coeff_p;
+				float	coeff_d;
+				float	coeff_i;
 
 
 		};

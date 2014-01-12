@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 2.6)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -pthread")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -pthread -D_DEBUG")
 
 project(galaxy)
 
@@ -15,6 +15,7 @@ set(src
 	src/gal/network/communicating.cpp
 	src/gal/network/server.cpp
 	src/gal/network/client.cpp
+	src/gal/control/control.cpp
 )
 
 add_library(galaxy ${src})
@@ -41,6 +42,8 @@ install(FILES ${files} DESTINATION include/gal)
 
 install(FILES ${PROJECT_SOURCE_DIR}/gal/sig/signal.h DESTINATION include/gal/sig)
 install(FILES ${PROJECT_SOURCE_DIR}/gal/sig/connection.h DESTINATION include/gal/sig)
+
+install(FILES ${PROJECT_SOURCE_DIR}/gal/control/control.h DESTINATION include/gal/control)
 
 set(files
 	${PROJECT_SOURCE_DIR}/gal/network/message.h

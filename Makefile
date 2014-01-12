@@ -188,6 +188,30 @@ test_sig/fast:
 	$(MAKE) -f CMakeFiles/test_sig.dir/build.make CMakeFiles/test_sig.dir/build
 .PHONY : test_sig/fast
 
+src/gal/control/control.o: src/gal/control/control.cpp.o
+.PHONY : src/gal/control/control.o
+
+# target to build an object file
+src/gal/control/control.cpp.o:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/control/control.cpp.o
+.PHONY : src/gal/control/control.cpp.o
+
+src/gal/control/control.i: src/gal/control/control.cpp.i
+.PHONY : src/gal/control/control.i
+
+# target to preprocess a source file
+src/gal/control/control.cpp.i:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/control/control.cpp.i
+.PHONY : src/gal/control/control.cpp.i
+
+src/gal/control/control.s: src/gal/control/control.cpp.s
+.PHONY : src/gal/control/control.s
+
+# target to generate assembly for a file
+src/gal/control/control.cpp.s:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/control/control.cpp.s
+.PHONY : src/gal/control/control.cpp.s
+
 src/gal/except.o: src/gal/except.cpp.o
 .PHONY : src/gal/except.o
 
@@ -444,6 +468,9 @@ help:
 	@echo "... test_asio"
 	@echo "... test_map"
 	@echo "... test_sig"
+	@echo "... src/gal/control/control.o"
+	@echo "... src/gal/control/control.i"
+	@echo "... src/gal/control/control.s"
 	@echo "... src/gal/except.o"
 	@echo "... src/gal/except.i"
 	@echo "... src/gal/except.s"
