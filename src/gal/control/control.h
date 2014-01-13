@@ -9,26 +9,9 @@ namespace gal {
 			public:
 				control();
 				float	f(float, float, double);
-				float	f(float, double);
 				
-				int	t;
-				
-				double	time0;
-				double	time1;
-
-
-				float	e0;
-				float	e1;
-
-				float	x0;
-				float	x1;
-				float	v;
-				float	i;
-				
-				float	coeff_p;
-				float	coeff_d;
-				float	coeff_i;
-
+				float	coeff_p_;
+				float	coeff_d_;
 
 		};
 	}
