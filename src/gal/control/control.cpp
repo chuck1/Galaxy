@@ -7,7 +7,7 @@ gal::control::control::control():
 {
 
 }
-float gal::control::control::f(float e, float v, double time) {
+float gal::control::control::f(float e, float v) {
 
 	// force
 	float force = e1 * coeff_p + v * coeff_d;
