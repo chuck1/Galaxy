@@ -2,12 +2,8 @@
 
 
 gal::control::control::control():
-	t(0),
-	v(0),
-	i(0),
-	coeff_p(   1.0f),
-	coeff_d(-100.0f),
-	coeff_i(   0.0f)
+	coeff_p_(0.0f),
+	coeff_d_(0.0f)
 {
 
 }
