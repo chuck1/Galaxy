@@ -10,7 +10,7 @@ gal::control::control::control():
 float gal::control::control::f(float e, float v) {
 
 	// force
-	float force = e1 * coeff_p + v * coeff_d;
+	float force = e * coeff_p_ + v * coeff_d_;
 	
 	return force;
 }

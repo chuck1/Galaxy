@@ -8,7 +8,7 @@ namespace gal {
 		class control {
 			public:
 				control();
-				float	f(float, float, double);
+				float	f(float, float);
 				
 				float	coeff_p_;
 				float	coeff_d_;
