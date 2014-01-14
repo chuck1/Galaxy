@@ -16,6 +16,7 @@ set(src
 	src/gal/network/server.cpp
 	src/gal/network/client.cpp
 	src/gal/control/control.cpp
+	src/gal/timer/timer_set.cpp
 )
 
 add_library(galaxy ${src})

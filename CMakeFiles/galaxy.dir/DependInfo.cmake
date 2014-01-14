@@ -12,6 +12,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/charles/Programming/C++/galaxy/src/gal/network/message.cpp" "/home/charles/Programming/C++/galaxy/CMakeFiles/galaxy.dir/src/gal/network/message.cpp.o"
   "/home/charles/Programming/C++/galaxy/src/gal/network/server.cpp" "/home/charles/Programming/C++/galaxy/CMakeFiles/galaxy.dir/src/gal/network/server.cpp.o"
   "/home/charles/Programming/C++/galaxy/src/gal/stack_trace.cpp" "/home/charles/Programming/C++/galaxy/CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o"
+  "/home/charles/Programming/C++/galaxy/src/gal/timer/timer_set.cpp" "/home/charles/Programming/C++/galaxy/CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

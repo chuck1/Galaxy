@@ -6,11 +6,5 @@
 
 #IncludeRegexTransform: 
 
-/home/charles/Programming/C++/galaxy/src/gal/control/control.cpp
-gal/control/control.h
--
-
-src/gal/control/control.h
-math/vec3.h
--
+/home/charles/Programming/C++/galaxy/src/gal/timer/timer_set.cpp
 

@@ -35,3 +35,5 @@ CMakeFiles/galaxy.dir/src/gal/network/server.cpp.o: src/gal/network/server.h
 CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o: src/gal/stack_trace.cpp
 CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.o: src/gal/stack_trace.h
 
+CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.o: src/gal/timer/timer_set.cpp
+

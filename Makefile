@@ -380,6 +380,30 @@ src/gal/stack_trace.cpp.s:
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.s
 .PHONY : src/gal/stack_trace.cpp.s
 
+src/gal/timer/timer_set.o: src/gal/timer/timer_set.cpp.o
+.PHONY : src/gal/timer/timer_set.o
+
+# target to build an object file
+src/gal/timer/timer_set.cpp.o:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.o
+.PHONY : src/gal/timer/timer_set.cpp.o
+
+src/gal/timer/timer_set.i: src/gal/timer/timer_set.cpp.i
+.PHONY : src/gal/timer/timer_set.i
+
+# target to preprocess a source file
+src/gal/timer/timer_set.cpp.i:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.i
+.PHONY : src/gal/timer/timer_set.cpp.i
+
+src/gal/timer/timer_set.s: src/gal/timer/timer_set.cpp.s
+.PHONY : src/gal/timer/timer_set.s
+
+# target to generate assembly for a file
+src/gal/timer/timer_set.cpp.s:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.s
+.PHONY : src/gal/timer/timer_set.cpp.s
+
 test/asio/main.o: test/asio/main.cpp.o
 .PHONY : test/asio/main.o
 
@@ -492,6 +516,9 @@ help:
 	@echo "... src/gal/stack_trace.o"
 	@echo "... src/gal/stack_trace.i"
 	@echo "... src/gal/stack_trace.s"
+	@echo "... src/gal/timer/timer_set.o"
+	@echo "... src/gal/timer/timer_set.i"
+	@echo "... src/gal/timer/timer_set.s"
 	@echo "... test/asio/main.o"
 	@echo "... test/asio/main.i"
 	@echo "... test/asio/main.s"
