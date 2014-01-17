@@ -41,9 +41,10 @@ namespace gal
 			}
 			template <class U> void foreach(std::function<void(U*)> func)
 			{
+				assert(func);
+				
 				std::shared_ptr<U> u;
-				auto it = map_.begin();
-				for(; it != map_.end(); ++it)
+				for(auto it = map_.begin(); it != map_.end(); ++it)
 				{
 					u = std::dynamic_pointer_cast<U>(it->second);
 

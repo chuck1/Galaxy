@@ -1,16 +1,12 @@
-#ifndef __GAL_FLAG_H__
-#define __GAL_FLAG_H__
+#ifndef __GALAXY_FLAG_H__
+#define __GALAXY_FLAG_H__
 
-namespace gal
-{
-	template <typename flag_type = unsigned int> class flag
-	{
+namespace gal {
+	template <typename flag_type = unsigned int> class flag {
 		public:
-
-			flag(){}
+			flag() {}
 			void		set(flag_type fl)
 			{
-
 				f(f() | fl);
 			}
 			void		unset(flag_type fl)

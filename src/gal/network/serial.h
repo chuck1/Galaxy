@@ -29,15 +29,27 @@ namespace gal {
 			serial_ext() {
 				reset_tuple(tup_);
 			}
-
-
-
-
+			
+			
+			
+			template<int i> void read_expand(message_shared msg) {
+				auto p = std::get<i>(tup_);
+				
+				assert(p);
+				//assert(std::get<i>(tup_));
+				
+				p->read(msg);
+				//std::get<i>(tup_)->read(msg);
+			}
+			
+			
+			
 			template<int... S> void write_expand(seq<S...>, message_shared msg) {
 				pass{(std::get<S>(tup_)->write(msg), 1)...};
 			}
 			template<int... S> void read_expand(seq<S...>, message_shared msg) {
-				pass{(std::get<S>(tup_)->read(msg), 1)...};
+				//pass{(std::get<S>(tup_)->read(msg), 1)...};
+				pass{(read_expand<S>(msg), 1)...};
 			}
 			template<int... S> size_t size_expand(seq<S...>) {
 				size_t size = 0;

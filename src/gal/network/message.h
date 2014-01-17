@@ -25,12 +25,8 @@ namespace gal
 				/// header length
 				enum
 				{
-					header_length = 4
-				};
-				/// max body length
-				enum
-				{
-					max_body_length = 65536
+					header_length	= sizeof(unsigned int),
+					max_body_length = 1048576
 				};
 			public:
 				/// ctor
@@ -38,6 +34,9 @@ namespace gal
 				void			set(void const * const, unsigned int);
 				void			reset_head();
 				void			write(void const * const, size_t);
+				template<typename T> void	write(const T& t) {
+					write(&t, sizeof(T));
+				}
 				void			read(void * const, size_t);
 				/// data
 				const char*		data() const;

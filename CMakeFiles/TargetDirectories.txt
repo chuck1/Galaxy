@@ -2,3 +2,4 @@
 /home/charles/Programming/C++/galaxy/CMakeFiles/test_asio.dir
 /home/charles/Programming/C++/galaxy/CMakeFiles/test_map.dir
 /home/charles/Programming/C++/galaxy/CMakeFiles/test_sig.dir
+/home/charles/Programming/C++/galaxy/CMakeFiles/test_timer.dir

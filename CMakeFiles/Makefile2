@@ -56,7 +56,7 @@ CMAKE_BINARY_DIR = /home/charles/Programming/C++/galaxy
 CMakeFiles/galaxy.dir/all:
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/depend
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles  1 2 3 4 5 6 7 8 9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles  1 2 3 4 5 6 7 8 9 10
 	@echo "Built target galaxy"
 .PHONY : CMakeFiles/galaxy.dir/all
 
@@ -66,7 +66,7 @@ all: CMakeFiles/galaxy.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/galaxy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/galaxy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 0
 .PHONY : CMakeFiles/galaxy.dir/rule
@@ -91,7 +91,7 @@ clean: CMakeFiles/galaxy.dir/clean
 CMakeFiles/test_asio.dir/all: CMakeFiles/galaxy.dir/all
 	$(MAKE) -f CMakeFiles/test_asio.dir/build.make CMakeFiles/test_asio.dir/depend
 	$(MAKE) -f CMakeFiles/test_asio.dir/build.make CMakeFiles/test_asio.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles  10
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles  11
 	@echo "Built target test_asio"
 .PHONY : CMakeFiles/test_asio.dir/all
 
@@ -101,7 +101,7 @@ all: CMakeFiles/test_asio.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_asio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_asio.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 0
 .PHONY : CMakeFiles/test_asio.dir/rule
@@ -126,7 +126,7 @@ clean: CMakeFiles/test_asio.dir/clean
 CMakeFiles/test_map.dir/all: CMakeFiles/galaxy.dir/all
 	$(MAKE) -f CMakeFiles/test_map.dir/build.make CMakeFiles/test_map.dir/depend
 	$(MAKE) -f CMakeFiles/test_map.dir/build.make CMakeFiles/test_map.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles  11
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles  12
 	@echo "Built target test_map"
 .PHONY : CMakeFiles/test_map.dir/all
 
@@ -136,7 +136,7 @@ all: CMakeFiles/test_map.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_map.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_map.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 0
 .PHONY : CMakeFiles/test_map.dir/rule
@@ -161,7 +161,7 @@ clean: CMakeFiles/test_map.dir/clean
 CMakeFiles/test_sig.dir/all: CMakeFiles/galaxy.dir/all
 	$(MAKE) -f CMakeFiles/test_sig.dir/build.make CMakeFiles/test_sig.dir/depend
 	$(MAKE) -f CMakeFiles/test_sig.dir/build.make CMakeFiles/test_sig.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles  12
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles  13
 	@echo "Built target test_sig"
 .PHONY : CMakeFiles/test_sig.dir/all
 
@@ -171,7 +171,7 @@ all: CMakeFiles/test_sig.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_sig.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_sig.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 0
 .PHONY : CMakeFiles/test_sig.dir/rule
@@ -187,6 +187,41 @@ CMakeFiles/test_sig.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/test_sig.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_timer.dir
+
+# All Build rule for target.
+CMakeFiles/test_timer.dir/all: CMakeFiles/galaxy.dir/all
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/depend
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles  14
+	@echo "Built target test_timer"
+.PHONY : CMakeFiles/test_timer.dir/all
+
+# Include target in all.
+all: CMakeFiles/test_timer.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_timer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 11
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_timer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/Programming/C++/galaxy/CMakeFiles 0
+.PHONY : CMakeFiles/test_timer.dir/rule
+
+# Convenience name for target.
+test_timer: CMakeFiles/test_timer.dir/rule
+.PHONY : test_timer
+
+# clean rule for target.
+CMakeFiles/test_timer.dir/clean:
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/clean
+.PHONY : CMakeFiles/test_timer.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/test_timer.dir/clean
 .PHONY : clean
 
 #=============================================================================

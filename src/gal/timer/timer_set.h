@@ -6,8 +6,6 @@
 
 #include <gal/timer/timer.h>
 
-typedef std::shared_ptr<gal::timer::timer> timer_s;
-
 namespace gal {
 	namespace timer {
 		class timer_set {

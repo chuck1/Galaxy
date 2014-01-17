@@ -1,7 +1,7 @@
 #ifndef __GALAXY_NETWORK_ARRAY_H__
 #define __GALAXY_NETWORK_ARRAY_H__
 
-#include <vector>
+#include <queue>
 
 #include <gal/config.h>
 #include <gal/util.h>
@@ -10,7 +10,7 @@
 namespace gal {
 	namespace network {
 		template <class T> struct vector {
-			typedef std::vector<T> vec;
+			typedef std::deque<T> vec;
 			
 			vector() {}
 			void write(message_shared msg) {
@@ -55,7 +55,7 @@ namespace gal {
 		{
 			public:
 				typedef std::tuple<std::shared_ptr<Args>...> tuple;
-				typedef std::vector<tuple> vec;
+				typedef std::deque<tuple> vec;
 				typedef typename gens<sizeof...(Args)>::type seq_type;
 				typedef typename vec::size_type size_type;
 
@@ -63,17 +63,36 @@ namespace gal {
 
 				vector_ext() {}
 
+
+				template<int i> void write_expand(tuple t, message_shared msg) {
+					auto p = std::get<i>(t);
+					assert(p);		
+					p->write(msg);
+				}
+				template<int i> void read_expand(tuple t, message_shared msg) {
+					auto p = std::get<i>(t);
+					assert(p);		
+					p->read(msg);
+				}
+				template<int i> size_t size_expand(tuple t) {
+					auto p = std::get<i>(t);
+					assert(p);		
+					return p->size();
+				}
+				
+				
 				template<int... S> void write_expand(seq<S...>, tuple t, message_shared msg) {
-					pass{(std::get<S>(t)->write(msg), 1)...};
+					pass{(write_expand<S>(t, msg), 1)...};
 				}
 				template<int... S> void read_expand(seq<S...>, tuple t, message_shared msg) {
-					pass{(std::get<S>(t)->read(msg), 1)...};
+					pass{(read_expand<S>(t, msg), 1)...};
 				}
 				template<int... S> size_t size_expand(seq<S...>, tuple t) {
 					size_t size = 0;
-					pass{(size += std::get<S>(t)->size(), 1)...};
+					pass{(size += size_expand<S>(t), 1)...};
 					return size;
 				}
+
 
 
 				void	write(message_shared msg)
@@ -87,19 +106,19 @@ namespace gal {
 						write_expand(s, *it, msg);
 					}
 				}
-
-
 				void	read(message_shared msg)
 				{
 					size_type size;
 
-					msg->read(&size, sizeof(typename vec::size_type));
+					msg->read(&size, sizeof(size_type));
 
 					tuple t;
 					vec_.clear();
 					seq_type s;
 					for(typename vec::size_type i = 0; i < size; ++i)
 					{
+						reset_tuple(t);
+						
 						read_expand(s, t, msg);
 
 						vec_.push_back(t);

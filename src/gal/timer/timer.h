@@ -1,11 +1,16 @@
 #ifndef __GALAXY_TIMER__
 #define __GALAXY_TIMER__
 
+#include <assert.h>
+
+#include <gal/config.h>
+
 namespace gal {
 	namespace timer {
 		class timer {
 			public:
-
+				timer(double);
+				
 				virtual void	activate() = 0;
 				
 				double		time_;
@@ -13,9 +18,12 @@ namespace gal {
 
 
 		class timer_less {
-			bool operator()(const timer& lhs, const timer& rhs) {
-				return (lhs.time_ < rhs.time_);
-			}
+			public:
+				bool operator()(const timer_s& lhs, const timer_s& rhs) {
+					assert(rhs);
+					assert(lhs);
+					return (lhs->time_ < rhs->time_);
+				}
 
 		};
 	}

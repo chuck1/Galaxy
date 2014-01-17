@@ -6,31 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/charles/Programming/C++/galaxy/test/sig/main.cpp
+/home/charles/Programming/C++/galaxy/test/timer/main.cpp
 stdio.h
 -
-gal/sig/signal.h
--
-gal/sig/connection.h
+gal/timer/timer_set.h
 -
 
 src/gal/config.h
 memory
 -
 
-src/gal/sig/connection.h
-functional
--
-
-src/gal/sig/signal.h
-stdio.h
--
-memory
--
-deque
+src/gal/timer/timer.h
+assert.h
 -
 gal/config.h
 -
-gal/sig/connection.h
+
+src/gal/timer/timer_set.h
+set
+-
+memory
+-
+gal/timer/timer.h
 -
 

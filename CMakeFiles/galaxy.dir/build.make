@@ -230,9 +230,32 @@ CMakeFiles/galaxy.dir/src/gal/control/control.cpp.o.provides: CMakeFiles/galaxy.
 
 CMakeFiles/galaxy.dir/src/gal/control/control.cpp.o.provides.build: CMakeFiles/galaxy.dir/src/gal/control/control.cpp.o
 
+CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o: CMakeFiles/galaxy.dir/flags.make
+CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o: src/gal/timer/timer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles $(CMAKE_PROGRESS_9)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o -c /home/charles/Programming/C++/galaxy/src/gal/timer/timer.cpp
+
+CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/charles/Programming/C++/galaxy/src/gal/timer/timer.cpp > CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.i
+
+CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/charles/Programming/C++/galaxy/src/gal/timer/timer.cpp -o CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.s
+
+CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o.requires:
+.PHONY : CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o.requires
+
+CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o.provides: CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o.provides.build
+.PHONY : CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o.provides
+
+CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o.provides.build: CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o
+
 CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.o: CMakeFiles/galaxy.dir/flags.make
 CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.o: src/gal/timer/timer_set.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/charles/Programming/C++/galaxy/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.o -c /home/charles/Programming/C++/galaxy/src/gal/timer/timer_set.cpp
 
@@ -263,6 +286,7 @@ galaxy_OBJECTS = \
 "CMakeFiles/galaxy.dir/src/gal/network/server.cpp.o" \
 "CMakeFiles/galaxy.dir/src/gal/network/client.cpp.o" \
 "CMakeFiles/galaxy.dir/src/gal/control/control.cpp.o" \
+"CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o" \
 "CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.o"
 
 # External object files for target galaxy
@@ -276,6 +300,7 @@ libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/network/communicating.cpp.o
 libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/network/server.cpp.o
 libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/network/client.cpp.o
 libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/control/control.cpp.o
+libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o
 libgalaxy.a: CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.o
 libgalaxy.a: CMakeFiles/galaxy.dir/build.make
 libgalaxy.a: CMakeFiles/galaxy.dir/link.txt
@@ -295,6 +320,7 @@ CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/network/communicat
 CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/network/server.cpp.o.requires
 CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/network/client.cpp.o.requires
 CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/control/control.cpp.o.requires
+CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o.requires
 CMakeFiles/galaxy.dir/requires: CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.o.requires
 .PHONY : CMakeFiles/galaxy.dir/requires
 

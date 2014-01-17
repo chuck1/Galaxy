@@ -188,6 +188,19 @@ test_sig/fast:
 	$(MAKE) -f CMakeFiles/test_sig.dir/build.make CMakeFiles/test_sig.dir/build
 .PHONY : test_sig/fast
 
+#=============================================================================
+# Target rules for targets named test_timer
+
+# Build rule for target.
+test_timer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_timer
+.PHONY : test_timer
+
+# fast build rule for target.
+test_timer/fast:
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/build
+.PHONY : test_timer/fast
+
 src/gal/control/control.o: src/gal/control/control.cpp.o
 .PHONY : src/gal/control/control.o
 
@@ -380,6 +393,30 @@ src/gal/stack_trace.cpp.s:
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/stack_trace.cpp.s
 .PHONY : src/gal/stack_trace.cpp.s
 
+src/gal/timer/timer.o: src/gal/timer/timer.cpp.o
+.PHONY : src/gal/timer/timer.o
+
+# target to build an object file
+src/gal/timer/timer.cpp.o:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.o
+.PHONY : src/gal/timer/timer.cpp.o
+
+src/gal/timer/timer.i: src/gal/timer/timer.cpp.i
+.PHONY : src/gal/timer/timer.i
+
+# target to preprocess a source file
+src/gal/timer/timer.cpp.i:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.i
+.PHONY : src/gal/timer/timer.cpp.i
+
+src/gal/timer/timer.s: src/gal/timer/timer.cpp.s
+.PHONY : src/gal/timer/timer.s
+
+# target to generate assembly for a file
+src/gal/timer/timer.cpp.s:
+	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/timer/timer.cpp.s
+.PHONY : src/gal/timer/timer.cpp.s
+
 src/gal/timer/timer_set.o: src/gal/timer/timer_set.cpp.o
 .PHONY : src/gal/timer/timer_set.o
 
@@ -476,6 +513,30 @@ test/sig/main.cpp.s:
 	$(MAKE) -f CMakeFiles/test_sig.dir/build.make CMakeFiles/test_sig.dir/test/sig/main.cpp.s
 .PHONY : test/sig/main.cpp.s
 
+test/timer/main.o: test/timer/main.cpp.o
+.PHONY : test/timer/main.o
+
+# target to build an object file
+test/timer/main.cpp.o:
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/test/timer/main.cpp.o
+.PHONY : test/timer/main.cpp.o
+
+test/timer/main.i: test/timer/main.cpp.i
+.PHONY : test/timer/main.i
+
+# target to preprocess a source file
+test/timer/main.cpp.i:
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/test/timer/main.cpp.i
+.PHONY : test/timer/main.cpp.i
+
+test/timer/main.s: test/timer/main.cpp.s
+.PHONY : test/timer/main.s
+
+# target to generate assembly for a file
+test/timer/main.cpp.s:
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/test/timer/main.cpp.s
+.PHONY : test/timer/main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -492,6 +553,7 @@ help:
 	@echo "... test_asio"
 	@echo "... test_map"
 	@echo "... test_sig"
+	@echo "... test_timer"
 	@echo "... src/gal/control/control.o"
 	@echo "... src/gal/control/control.i"
 	@echo "... src/gal/control/control.s"
@@ -516,6 +578,9 @@ help:
 	@echo "... src/gal/stack_trace.o"
 	@echo "... src/gal/stack_trace.i"
 	@echo "... src/gal/stack_trace.s"
+	@echo "... src/gal/timer/timer.o"
+	@echo "... src/gal/timer/timer.i"
+	@echo "... src/gal/timer/timer.s"
 	@echo "... src/gal/timer/timer_set.o"
 	@echo "... src/gal/timer/timer_set.i"
 	@echo "... src/gal/timer/timer_set.s"
@@ -528,6 +593,9 @@ help:
 	@echo "... test/sig/main.o"
 	@echo "... test/sig/main.i"
 	@echo "... test/sig/main.s"
+	@echo "... test/timer/main.o"
+	@echo "... test/timer/main.i"
+	@echo "... test/timer/main.s"
 .PHONY : help
 
 

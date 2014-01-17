@@ -16,12 +16,13 @@ set(src
 	src/gal/network/server.cpp
 	src/gal/network/client.cpp
 	src/gal/control/control.cpp
+	src/gal/timer/timer.cpp
 	src/gal/timer/timer_set.cpp
 )
 
 add_library(galaxy ${src})
 
-include_directories("${PROJECT_SOURCE_DIR}")
+include_directories("${PROJECT_SOURCE_DIR}" ../math/src)
 
 set(CMAKE_INSTALL_PREFIX $ENV{HOME}/usr)
 
@@ -38,8 +39,15 @@ set(files
 	${PROJECT_SOURCE_DIR}/gal/except.h
 	${PROJECT_SOURCE_DIR}/gal/stack_trace.h
 )
-
 install(FILES ${files} DESTINATION include/gal)
+
+set(files
+	${PROJECT_SOURCE_DIR}/gal/timer/timer.h
+	${PROJECT_SOURCE_DIR}/gal/timer/timer_set.h
+)
+install(FILES ${files} DESTINATION include/gal/timer)
+
+
 
 install(FILES ${PROJECT_SOURCE_DIR}/gal/sig/signal.h DESTINATION include/gal/sig)
 install(FILES ${PROJECT_SOURCE_DIR}/gal/sig/connection.h DESTINATION include/gal/sig)
@@ -62,10 +70,17 @@ add_executable(test_map test/map/main.cpp)
 target_link_libraries(test_map galaxy)
 
 project(test_asio)
+link_directories(. ../math)
 add_executable(test_asio test/asio/main.cpp)
-target_link_libraries(test_asio galaxy)
+target_link_libraries(test_asio galaxy math tinyxml2)
 
 project(test_sig)
 add_executable(test_sig test/sig/main.cpp)
 target_link_libraries(test_sig galaxy)
+
+project(test_timer)
+add_executable(test_timer test/timer/main.cpp)
+target_link_libraries(test_timer galaxy)
+
+
 

@@ -6,6 +6,8 @@
 /home/charles/usr/include/gal/map.h
 /home/charles/usr/include/gal/except.h
 /home/charles/usr/include/gal/stack_trace.h
+/home/charles/usr/include/gal/timer/timer.h
+/home/charles/usr/include/gal/timer/timer_set.h
 /home/charles/usr/include/gal/sig/signal.h
 /home/charles/usr/include/gal/sig/connection.h
 /home/charles/usr/include/gal/control/control.h

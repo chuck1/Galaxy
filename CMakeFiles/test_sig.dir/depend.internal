@@ -3,5 +3,6 @@
 
 CMakeFiles/test_sig.dir/test/sig/main.cpp.o
  /home/charles/Programming/C++/galaxy/test/sig/main.cpp
+ src/gal/config.h
  src/gal/sig/connection.h
  src/gal/sig/signal.h

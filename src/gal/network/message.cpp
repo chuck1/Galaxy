@@ -86,16 +86,23 @@ void gal::network::message::reset_head() {
 	head_ = body();
 }
 void gal::network::message::write(void const * const v, size_t len) {
+	GALAXY_DEBUG_2_FUNCTION;
 	
 	assert(v);
 	
-	assert((head_ + len) < (body() + max_body_length));
+	size_t new_length = body_length() + len;
+	
+	if((head_ + len) > (body() + max_body_length))
+	{
+		printf("body length %i exceeds %i\n", (int)new_length, (int)max_body_length);
+		abort();
+	}
 	
 	memcpy(head_, v, len);
 	
 	head_ += len;
 	
-	body_length(len);
+	body_length(new_length);
 	encode_header();
 }
 void gal::network::message::read(void * const v, size_t len) {

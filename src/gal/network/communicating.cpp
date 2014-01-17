@@ -6,6 +6,8 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 
+#include <math/free.h>
+
 #include <gal/config.h>
 //#include <gal/free.hpp>
 
@@ -23,7 +25,9 @@ gal::network::communicating::communicating( int socket ):
 }
 void	gal::network::communicating::start()
 {
+	GALAXY_DEBUG_0_FUNCTION;
 	//printf("lock mutex_start_\n");
+
 	std::unique_lock<std::mutex> lk(mutex_start_);
 	
 	write_thread_ = std::thread(std::bind(&communicating::thread_write_dispatch, this ) );
@@ -35,8 +39,7 @@ void	gal::network::communicating::start()
 	
 	read_thread_ = std::thread(std::bind(&communicating::thread_read, this ) );
 }
-void	gal::network::communicating::write(gal::network::message::shared_t msg)
-{	
+void	gal::network::communicating::write(gal::network::message::shared_t msg) {	
 	GALAXY_DEBUG_1_FUNCTION;
 
 	{
@@ -49,10 +52,9 @@ void	gal::network::communicating::write(gal::network::message::shared_t msg)
 	
 	cv_.notify_one();
 }
-void	gal::network::communicating::close()
-{	
+void	gal::network::communicating::close() {	
 	GALAXY_DEBUG_0_FUNCTION;
-
+	
 	{
 		std::lock_guard<std::mutex> lk( mutex_ );
 
@@ -65,9 +67,8 @@ void	gal::network::communicating::close()
 
 	::close( socket_ );
 }
-void	gal::network::communicating::thread_write_dispatch()
-{
-	GALAXY_DEBUG_0_FUNCTION;
+void	gal::network::communicating::thread_write_dispatch() {
+	GALAXY_DEBUG_1_FUNCTION;
 	
 	//printf("lock mutex_start_\n");
 
@@ -117,7 +118,7 @@ void	gal::network::communicating::thread_write_dispatch()
 void	gal::network::communicating::thread_write(gal::network::message::shared_t message) {
 	GALAXY_DEBUG_1_FUNCTION;
 	
-	//printf("sending message of length %i\n", (int)message->length());
+	printf("DEBUG: sending message of length %i\n", (int)message->length());
 
 	int result = ::send(socket_, message->data(), message->length(), 0 );
 
@@ -135,9 +136,8 @@ void	gal::network::communicating::thread_write(gal::network::message::shared_t m
 		exit(0);
 	}
 }
-void	gal::network::communicating::thread_read()
-{
-	GALAXY_DEBUG_0_FUNCTION;
+void	gal::network::communicating::thread_read() {
+	GALAXY_DEBUG_1_FUNCTION;
 
 	while ( 1 )
 	{
@@ -160,10 +160,9 @@ void	gal::network::communicating::thread_read()
 		}
 	}
 }
-void	gal::network::communicating::thread_read_header()
-{
+void	gal::network::communicating::thread_read_header() {
 	GALAXY_DEBUG_1_FUNCTION;
-
+	
 	//if ( !socket_->is_open() ) exit(0);//gal::cerr << "SOCKET NOT OPEN" << endl;
 	if ( !read_msg_->data() ) exit(0); //gal::cerr << "WTF!" << std::endl;
 
@@ -194,11 +193,10 @@ void	gal::network::communicating::thread_read_header()
 
 	handle_do_read_header();
 }
-void	gal::network::communicating::thread_read_body()
-{
+void	gal::network::communicating::thread_read_body() {
 	GALAXY_DEBUG_1_FUNCTION;
-
-	//printf("waiting for %i bytes\n", (int)read_msg_->body_length());
+	
+	
 	// wail until all data is available
 	int bytes = ::recv(socket_, read_msg_->body(), read_msg_->body_length(), MSG_WAITALL);
 
@@ -221,14 +219,16 @@ void	gal::network::communicating::thread_read_body()
 		printf("not enough data\n");
 		exit(0);
 	}
-
+	
+	printf("DEBUG: received %i bytes\n", (int)read_msg_->body_length());
+	math::hexdump(read_msg_->body(), read_msg_->body_length());
+	
 	handle_do_read_body();
 }
 
-void	gal::network::communicating::handle_do_read_header()
-{
+void	gal::network::communicating::handle_do_read_header() {
 	GALAXY_DEBUG_1_FUNCTION;
-
+	
 	if ( read_msg_->decode_header() )
 	{	
 		thread_read_body();
@@ -240,10 +240,12 @@ void	gal::network::communicating::handle_do_read_header()
 		std::thread(&gal::network::communicating::close, this).detach();
 	}
 }
-void	gal::network::communicating::handle_do_read_body()
-{
+void	gal::network::communicating::handle_do_read_body() {
 	GALAXY_DEBUG_1_FUNCTION;
-
+	
+	//gal::network::message_s msg(new gal::network::message);
+	
+	read_msg_->reset_head();
 	process(read_msg_);
 
 	thread_read_header();

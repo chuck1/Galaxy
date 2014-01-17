@@ -69,7 +69,7 @@ gal/network/message.h
 -
 
 src/gal/network/vector.h
-vector
+queue
 -
 gal/config.h
 -
