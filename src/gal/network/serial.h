@@ -22,7 +22,7 @@ namespace gal {
 	                        }
 		};
 		
-		template<typename T> class serial2: public serial<T> {
+		template<typename T> class serial2: public T {
 			public:
 	                        void write(gal::network::message_shared msg) {
 	                                
@@ -32,7 +32,7 @@ namespace gal {
 	                                
 	                                if(c == 1)
 	                                {
-	                                	serial<T>::write(msg);
+	                                	T::write(msg);
 	                                }
 	                                else if(c == 0)
 	                                {
@@ -52,7 +52,7 @@ namespace gal {
 	                                
 	                                if(c == 1)
 	                                {
-	                                	serial<T>::read(msg);
+	                                	T::read(msg);
 	                                }
 	                                else if(c == 0)
 	                                {
