@@ -9,19 +9,68 @@
 
 namespace gal {
         namespace network {
-                template<typename T> struct serial {
-                        void write(gal::network::message_shared msg) {
-                                msg->write(this, sizeof(T));
-                        }
-                        void read(gal::network::message_shared msg) {
-                                msg->read(this, sizeof(T));
-                        }
-                        size_t size() {
-                                return sizeof(T);
-                        }
+        	template<typename T> class serial {
+                	public:
+	                        void write(gal::network::message_shared msg) {
+	                                msg->write(this, sizeof(T));
+	                        }
+	                        void read(gal::network::message_shared msg) {
+	                                msg->read(this, sizeof(T));
+	                        }
+	                        size_t size() {
+	                                return sizeof(T);
+	                        }
 		};
-
-
+		
+		template<typename T> class serial2: public serial<T> {
+			public:
+	                        void write(gal::network::message_shared msg) {
+	                                
+	                                unsigned char c = write_code();
+	                                
+	                                msg->write(c);
+	                                
+	                                if(c == 1)
+	                                {
+	                                	serial<T>::write(msg);
+	                                }
+	                                else if(c == 0)
+	                                {
+	                                	
+		                        }
+		                        else
+		                        {
+		                        	printf("invalid write code\n");
+		                        	abort();
+		                        }
+	                        }
+	                        void read(gal::network::message_shared msg) {
+	                        	
+	                        	unsigned char c;
+	                                
+	                                msg->read(c);
+	                                
+	                                if(c == 1)
+	                                {
+	                                	serial<T>::read(msg);
+	                                }
+	                                else if(c == 0)
+	                                {
+	                                	
+		                        }
+		                        else
+		                        {
+		                        	printf("invalid write code\n");
+		                        	abort();
+		                        }
+	                        }
+	                        size_t size() {
+	                                return sizeof(T);
+	                        }
+		};
+		
+		
+		
 		template<typename... Args> struct serial_ext {
 			typedef typename gens<sizeof...(Args)>::type seq_type;                  
 			typedef std::tuple<std::shared_ptr<Args>...> tuple;
