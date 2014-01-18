@@ -26,7 +26,7 @@ namespace gal {
 			public:
 	                        void write(gal::network::message_shared msg) {
 	                                
-	                                unsigned char c = write_code();
+	                                unsigned char c = T::write_code();
 	                                
 	                                msg->write(c);
 	                                

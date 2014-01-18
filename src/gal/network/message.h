@@ -31,29 +31,32 @@ namespace gal
 			public:
 				/// ctor
 				message();
-				void			set(void const * const, unsigned int);
-				void			reset_head();
-				void			write(void const * const, size_t);
+				void				set(void const * const, unsigned int);
+				void				reset_head();
+				void				write(void const * const, size_t);
 				template<typename T> void	write(const T& t) {
 					write(&t, sizeof(T));
 				}
-				void			read(void * const, size_t);
+				void				read(void * const, size_t);
+				template<typename T> void	read(T& t) {
+					read(&t, sizeof(T));
+				}
 				/// data
-				const char*		data() const;
+				const char*			data() const;
 				/// data
-				char*			data();
+				char*				data();
 				/// length
-				std::size_t		length() const;
+				std::size_t			length() const;
 				/// body
-				const char*		body() const;
+				const char*			body() const;
 				/// body
-				char*			body();
+				char*				body();
 				/// body length
-				std::size_t		body_length() const;
+				std::size_t			body_length() const;
 				/// body length
-				void			body_length(std::size_t);
+				void				body_length(std::size_t);
 				/// decode header
-				bool			decode_header();
+				bool				decode_header();
 				/// encode header
 				void			encode_header();
 			private:

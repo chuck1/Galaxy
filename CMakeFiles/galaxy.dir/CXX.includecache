@@ -100,20 +100,6 @@ gal/network/message.h
 gal/network/communicating.h
 -
 
-/home/charles/Programming/C++/galaxy/src/gal/network/message.cpp
-cstdio
--
-cstdlib
--
-cstring
--
-assert.h
--
-gal/config.h
--
-gal/network/message.h
--
-
 /home/charles/Programming/C++/galaxy/src/gal/network/server.cpp
 cstdlib
 -
