@@ -6,6 +6,7 @@ void	server();
 void	process(gal::network::message::shared_t msg);
 
 int port = 0;
+char* addr = NULL;
 
 class Server: public gal::network::server
 {
@@ -62,16 +63,27 @@ void Server::callback_accept(int s) {
 
 int main(int argc, char ** argv)
 {
-	if(argc != 3)
+	if(argc < 3)
 	{
 		printf("usage: %s <type> <port>\n", argv[0]);
+		printf("usage: %s <type> <port> <addr>\n", argv[0]);
 		return 1;
 	}
-
+	
+	
 	port = atoi(argv[2]);
-
-	if(strcmp(argv[1], "c") == 0) client();
+	
 	if(strcmp(argv[1], "s") == 0) server();
+	
+	if(strcmp(argv[1], "c") == 0) {
+		if(argc < 4) {
+			printf("usage: %s c <port> <addr>\n", argv[0]);
+			return 1;
+		}
+		addr = argv[3];
+		client();
+	}
+	
 	return 0;
 }
 void	client()

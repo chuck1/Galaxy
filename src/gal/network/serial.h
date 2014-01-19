@@ -9,16 +9,18 @@
 
 namespace gal {
         namespace network {
-        	template<typename T> class serial {
+		struct base {};
+		
+        	template<typename DERIVED, typename BASE> class serial: BASE {
                 	public:
 	                        void write(gal::network::message_shared msg) {
-	                                msg->write(this, sizeof(T));
+	                                msg->write(this, sizeof(DERIVED));
 	                        }
 	                        void read(gal::network::message_shared msg) {
-	                                msg->read(this, sizeof(T));
+	                                msg->read(this, sizeof(DERIVED));
 	                        }
 	                        size_t size() {
-	                                return sizeof(T);
+	                                return sizeof(DERIVED);
 	                        }
 		};
 		

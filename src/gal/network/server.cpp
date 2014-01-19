@@ -27,7 +27,10 @@ gal::network::server::server(unsigned short localPort, int queueLen):
 
 
 }
-void	gal::network::server::thread_accept()
+void gal::network::server::close() {
+	thread_accept_.detach();
+}
+void gal::network::server::thread_accept()
 {
 	GALAXY_DEBUG_0_FUNCTION;
 
@@ -51,15 +54,14 @@ void	gal::network::server::thread_accept()
 	
 	while(1)
 	{
-		
 		int s = ::accept(socket_, (struct sockaddr *)&addr, &len);
 		if(s < 0)
 		{
 			perror("accept:");
 			exit(0);
 		}
-
-
+		
+		
 		{
 			std::lock_guard<std::mutex> lk(mutex_);
 			

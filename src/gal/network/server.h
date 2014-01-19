@@ -37,6 +37,7 @@ namespace gal
 				void			thread_accept();
 				virtual void		callback_accept(int) = 0;
 				void			write(msg_t);
+				void			close();
 			private:
 				int					socket_;
 				
