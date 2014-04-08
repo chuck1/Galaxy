@@ -150,19 +150,6 @@ galaxy/fast:
 .PHONY : galaxy/fast
 
 #=============================================================================
-# Target rules for targets named test_asio
-
-# Build rule for target.
-test_asio: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_asio
-.PHONY : test_asio
-
-# fast build rule for target.
-test_asio/fast:
-	$(MAKE) -f CMakeFiles/test_asio.dir/build.make CMakeFiles/test_asio.dir/build
-.PHONY : test_asio/fast
-
-#=============================================================================
 # Target rules for targets named test_map
 
 # Build rule for target.
@@ -441,30 +428,6 @@ src/gal/timer/timer_set.cpp.s:
 	$(MAKE) -f CMakeFiles/galaxy.dir/build.make CMakeFiles/galaxy.dir/src/gal/timer/timer_set.cpp.s
 .PHONY : src/gal/timer/timer_set.cpp.s
 
-test/asio/main.o: test/asio/main.cpp.o
-.PHONY : test/asio/main.o
-
-# target to build an object file
-test/asio/main.cpp.o:
-	$(MAKE) -f CMakeFiles/test_asio.dir/build.make CMakeFiles/test_asio.dir/test/asio/main.cpp.o
-.PHONY : test/asio/main.cpp.o
-
-test/asio/main.i: test/asio/main.cpp.i
-.PHONY : test/asio/main.i
-
-# target to preprocess a source file
-test/asio/main.cpp.i:
-	$(MAKE) -f CMakeFiles/test_asio.dir/build.make CMakeFiles/test_asio.dir/test/asio/main.cpp.i
-.PHONY : test/asio/main.cpp.i
-
-test/asio/main.s: test/asio/main.cpp.s
-.PHONY : test/asio/main.s
-
-# target to generate assembly for a file
-test/asio/main.cpp.s:
-	$(MAKE) -f CMakeFiles/test_asio.dir/build.make CMakeFiles/test_asio.dir/test/asio/main.cpp.s
-.PHONY : test/asio/main.cpp.s
-
 test/map/main.o: test/map/main.cpp.o
 .PHONY : test/map/main.o
 
@@ -550,7 +513,6 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test_asio"
 	@echo "... test_map"
 	@echo "... test_sig"
 	@echo "... test_timer"
@@ -584,9 +546,6 @@ help:
 	@echo "... src/gal/timer/timer_set.o"
 	@echo "... src/gal/timer/timer_set.i"
 	@echo "... src/gal/timer/timer_set.s"
-	@echo "... test/asio/main.o"
-	@echo "... test/asio/main.i"
-	@echo "... test/asio/main.s"
 	@echo "... test/map/main.o"
 	@echo "... test/map/main.i"
 	@echo "... test/map/main.s"

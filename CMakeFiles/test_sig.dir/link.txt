@@ -1,1 +1,1 @@
-/usr/bin/c++    -std=c++0x -pthread -D_DEBUG    CMakeFiles/test_sig.dir/test/sig/main.cpp.o  -o test_sig -rdynamic -L. -L../math libgalaxy.a -Wl,-rpath,.:../math 
+/usr/bin/c++    -rdynamic -g -Wall -std=c++0x -pthread -D_DEBUG    CMakeFiles/test_sig.dir/test/sig/main.cpp.o  -o test_sig -rdynamic libgalaxy.a 

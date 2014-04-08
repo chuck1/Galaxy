@@ -54,7 +54,7 @@ namespace gal
 					}
 					else
 					{
-						throw gal::except("null pointer");
+						throw;// gal::except("null pointer");
 					}
 				}
 			}

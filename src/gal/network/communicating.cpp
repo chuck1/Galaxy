@@ -221,7 +221,7 @@ void	gal::network::communicating::thread_read_body() {
 	}
 	
 	printf("DEBUG: received %i bytes\n", (int)read_msg_->body_length());
-	math::hexdump(read_msg_->body(), read_msg_->body_length());
+	//math::hexdump(read_msg_->body(), read_msg_->body_length());
 	
 	handle_do_read_body();
 }

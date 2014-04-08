@@ -10,6 +10,7 @@ namespace gal
 	{
 	public:
 		/// error codes
+/*
 		struct error_code
 		{
 			/// enum
@@ -19,16 +20,16 @@ namespace gal
 				eEXIT
 			};
 		};
+	*/	
 		
-		
-		except(char const *, int ec = error_code::eDEFAULT,bool incl_sys_msg = false) throw();
+		//except(char const *, int ec = error_code::eDEFAULT,bool incl_sys_msg = false) throw();
+		except() throw();	
 		
 		~except() throw();
 		
 		const char* what() const throw();
 		
 	private:
-		char*		message_;
 		int		ec_;
 	};
 }	

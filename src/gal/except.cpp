@@ -11,11 +11,11 @@
 #include <gal/except.h>
 
 
-gal::except::except(char const * message, int ec, bool inclSysMsg) throw():
-	ec_(ec)
+//gal::except::except(char const * message, int ec, bool inclSysMsg) throw():
+//	ec_(ec)
+gal::except::except() throw()
 {
-	message_ = new char[256];
-	
+	/*
 	if (inclSysMsg)
 	{
 		strcat(message_, message);
@@ -24,7 +24,7 @@ gal::except::except(char const * message, int ec, bool inclSysMsg) throw():
 	}
 	
 	printf("%s\n", message_);
-	
+	*/
 	print_stacktrace();
 }
 gal::except::~except() throw()
@@ -32,7 +32,7 @@ gal::except::~except() throw()
 }
 const char*	gal::except::what() const throw()
 {
-	return message_;
+	return "galaxy exception";
 }
 
 
