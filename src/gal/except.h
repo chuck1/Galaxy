@@ -4,33 +4,38 @@
 #include <exception>
 #include <string>
 
-namespace gal
-{
-	class except: public std::exception
-	{
-	public:
-		/// error codes
-/*
-		struct error_code
-		{
+namespace gal {
+	class except: public std::exception {
+		public:
+			struct flag {
+				enum e {
+					BT = 1 << 0
+				};
+			};
+
+			/// error codes
+			/*
+			   struct error_code
+			   {
 			/// enum
 			enum e
 			{
-				eDEFAULT = 0,
-				eEXIT
+			eDEFAULT = 0,
+			eEXIT
 			};
-		};
-	*/	
-		
-		//except(char const *, int ec = error_code::eDEFAULT,bool incl_sys_msg = false) throw();
-		except() throw();	
-		
-		~except() throw();
-		
-		const char* what() const throw();
-		
-	private:
-		int		ec_;
+			};
+			 */	
+
+			//except(char const *, int ec = error_code::eDEFAULT,bool incl_sys_msg = false) throw();
+			except() throw();	
+
+			~except() throw();
+
+			const char* what() const throw();
+
+		private:
+			unsigned int	flag_;
+			//int		ec_;
 	};
 }	
 

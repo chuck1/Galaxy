@@ -4,6 +4,7 @@
 CMakeFiles/galaxy.dir/src/gal/control/control.cpp.o
  ../math/src/math/math.h
  ../math/src/math/vec3.h
+ ../math/src/math/vecbase.h
  /home/charles/Programming/C++/galaxy/src/gal/control/control.cpp
  src/gal/control/control.h
 CMakeFiles/galaxy.dir/src/gal/except.cpp.o
@@ -27,6 +28,7 @@ CMakeFiles/galaxy.dir/src/gal/network/communicating.cpp.o
  ../math/src/math/transform.h
  ../math/src/math/vec3.h
  ../math/src/math/vec4.h
+ ../math/src/math/vecbase.h
  /home/charles/Programming/C++/galaxy/src/gal/network/communicating.cpp
  src/gal/config.h
  src/gal/network/communicating.h

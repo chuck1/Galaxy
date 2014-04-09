@@ -6,33 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/charles/Programming/C++/galaxy/src/gal/network/message.cpp
-cstdio
+/home/charles/Programming/C++/galaxy/src/gal/except.cpp
+stdio.h
 -
-cstdlib
+string.h
 -
-cstring
+errno.h
 -
-assert.h
+stdlib.h
 -
-gal/config.h
+execinfo.h
 -
-gal/network/message.h
+cxxabi.h
+-
+gal/stack_trace.h
+-
+gal/except.h
 -
 
-src/gal/config.h
-memory
+src/gal/except.h
+exception
+-
+string
 -
 
-src/gal/network/message.h
-cstdio
--
-cstdlib
--
-cstring
--
-memory
--
-deque
+src/gal/stack_trace.h
+stdio.h
 -
 
