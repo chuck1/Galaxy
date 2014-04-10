@@ -12,7 +12,7 @@ void gal::timer::timer_set::step(double time) {
 		if(time > t->time_) {
 			t->activate();
 			
-			it = set_.erase(it);
+			//it = set_.erase(it);
 		}
 		else {
 			++it;

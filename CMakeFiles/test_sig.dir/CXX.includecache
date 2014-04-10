@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/charles/Programming/C++/galaxy/test/sig/main.cpp
+/nfs/stak/students/r/rymalc/Documents/Programming/C++/galaxy/test/sig/main.cpp
 stdio.h
 -
 gal/sig/signal.h

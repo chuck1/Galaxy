@@ -6,6 +6,7 @@
 int fun(int a, int b)
 {
 	printf("fun %i\n", b);
+	return 1;
 }
 int main()
 {
