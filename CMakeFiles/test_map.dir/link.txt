@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic -g -Wall -std=c++0x -pthread -D_DEBUG    CMakeFiles/test_map.dir/test/map/main.cpp.o  -o test_map -rdynamic libgalaxy.a 
