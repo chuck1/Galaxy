@@ -18,7 +18,6 @@ set(INSTALL_CMAKE_DIR ${CMAKE_INSTALL_PREFIX}/lib/${LIB_NAME})
 set(PROJECT_BINARY_DIR lib)
 set(PROJECT_SOURCE_DIR src)
 
-
 include_directories("${PROJECT_SOURCE_DIR}")
 
 # common methods for statis library
