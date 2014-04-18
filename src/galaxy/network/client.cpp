@@ -11,10 +11,10 @@
 #include <unistd.h>          // For close()
 #include <netinet/in.h>      // For sockaddr_in
 
-#include <gal/network/client.h>
+#include <galaxy/network/client.hpp>
 
-#include <gal/config.h>
-#include <gal/free.h>
+#include <galaxy/config.hpp>
+#include <galaxy/free.hpp>
 
 void fillAddr(char const * address, unsigned short port, sockaddr_in &addr)
 {
@@ -37,9 +37,9 @@ void fillAddr(char const * address, unsigned short port, sockaddr_in &addr)
 }
 
 gal::network::client::client(char const * foreign_address, unsigned short foreign_port):
+	communicating(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)),
 	foreign_address_(foreign_address),
-	foreign_port_(foreign_port),
-	communicating(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP))
+	foreign_port_(foreign_port)
 {
 	GALAXY_DEBUG_0_FUNCTION;
 	

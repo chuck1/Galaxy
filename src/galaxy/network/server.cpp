@@ -14,8 +14,8 @@
 #include <netinet/in.h>      // For sockaddr_in
 
 
-#include <gal/config.h>
-#include <gal/network/server.h>
+#include <galaxy/config.hpp>
+#include <galaxy/network/server.hpp>
 
 
 gal::network::server::server(unsigned short localPort, int queueLen):

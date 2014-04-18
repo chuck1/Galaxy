@@ -1,5 +1,5 @@
-#include <gal/timer/timer_set.h>
 
+#include <galaxy/timer/timer_set.hpp>
 
 void gal::timer::timer_set::step(double time) {
 

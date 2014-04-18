@@ -4,7 +4,7 @@
 #include <set>
 #include <memory>
 
-#include <gal/timer/timer.h>
+#include <galaxy/timer/timer.hpp>
 
 namespace gal {
 	namespace timer {

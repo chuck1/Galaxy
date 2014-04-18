@@ -1,7 +1,7 @@
 #ifndef __GALAXY_CONTROL_H__
 #define __GALAXY_CONTROL_H__
 
-#include <math/vec3.h>
+#include <math/vec3.hpp>
 
 namespace gal {
 	namespace control {
