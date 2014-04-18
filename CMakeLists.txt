@@ -24,7 +24,7 @@ foreach(p LIB BIN INCLUDE CMAKE)
 endforeach()
 
 
-include_directories("${PROJECT_SOURCE_DIR}")
+include_directories("${PROJECT_SOURCE_DIR}/src")
 
 # common methods for statis library
 # =================================
