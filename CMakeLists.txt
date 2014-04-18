@@ -19,8 +19,6 @@ set(PROJECT_BINARY_DIR lib)
 set(PROJECT_SOURCE_DIR src)
 
 
-add_library(galaxy ${src})
-
 include_directories("${PROJECT_SOURCE_DIR}" ../math/src)
 
 # common methods for statis library
