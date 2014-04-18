@@ -10,7 +10,7 @@
 
 #include <sys/socket.h>
 
-#include <gal/network/message.h>
+#include <galaxy/network/message.hpp>
 
 namespace gal
 {

@@ -3,8 +3,8 @@
 #include <cstring>
 #include <assert.h>
 
-#include <gal/config.h>
-#include <gal/network/message.h>
+#include <galaxy/config.hpp>
+#include <galaxy/network/message.hpp>
 
 gal::network::message::message(): body_length_(0)
 {

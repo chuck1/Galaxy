@@ -16,8 +16,8 @@
 #include <unistd.h>          // For close()
 #include <netinet/in.h>      // For sockaddr_in
 
-#include <gal/config.h>
-#include <gal/network/communicating.h>
+#include <galaxy/config.hpp>
+#include <galaxy/network/communicating.hpp>
 
 //typedef std::shared_ptr<boost::asio::io_service>      boost_io_service_ptr;
 //typedef std::shared_ptr<boost::asio::ip::tcp::socket> boost_socket_ptr;

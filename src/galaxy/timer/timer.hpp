@@ -3,7 +3,7 @@
 
 #include <assert.h>
 
-#include <gal/config.h>
+#include <galaxy/config.hpp>
 
 namespace gal {
 	namespace timer {

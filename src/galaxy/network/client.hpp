@@ -6,7 +6,7 @@
 #include <iostream>
 #include <thread>
 
-#include <gal/network/communicating.h>
+#include <galaxy/network/communicating.hpp>
 
 //typedef std::shared_ptr<boost::asio::io_service>	boost_io_service_ptr;
 

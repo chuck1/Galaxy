@@ -3,7 +3,7 @@
 #include <execinfo.h>
 #include <cxxabi.h>
 
-#include <gal/stack_trace.h>
+#include <galaxy/stack_trace.hpp>
 
 void print_stacktrace( FILE *out )
 {

@@ -7,8 +7,8 @@
 #include <cxxabi.h>
 
 
-#include <gal/stack_trace.h>
-#include <gal/except.h>
+#include <galaxy/stack_trace.hpp>
+#include <galaxy/except.hpp>
 
 
 //gal::except::except(char const * message, int ec, bool inclSysMsg) throw():

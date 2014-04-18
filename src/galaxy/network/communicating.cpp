@@ -6,13 +6,13 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 
-#include <math/free.h>
+#include <math/free.hpp>
 
-#include <gal/config.h>
+#include <galaxy/config.hpp>
 //#include <gal/free.hpp>
 
-#include <gal/network/message.h>
-#include <gal/network/communicating.h>
+#include <galaxy/network/message.hpp>
+#include <galaxy/network/communicating.hpp>
 
 gal::network::communicating::communicating( int socket ):
 	socket_(socket),
