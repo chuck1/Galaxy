@@ -1,4 +1,4 @@
-#include <gal/control/control.h>
+#include <gal/control/control.hpp>
 
 
 gal::control::control::control():

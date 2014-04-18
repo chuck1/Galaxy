@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#include <command.hpp>
+#include <galaxy/command.hpp>
 
 using namespace std;
 
@@ -195,7 +195,7 @@ void	command::print_args()
 }
 void	command::print()
 {
-	printf("print %i %i\n", map_short_.size(), map_long_.size() );
+	printf("print %i %i\n", (int)map_short_.size(), (int)map_long_.size() );
 
 	for( auto it = map_short_.begin(); it !=  map_short_.end(); ++it )
 	{
