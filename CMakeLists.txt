@@ -15,15 +15,11 @@ set(INSTALL_BIN_DIR ${CMAKE_INSTALL_PREFIX})
 set(INSTALL_INCLUDE_DIR ${CMAKE_INSTALL_PREFIX}/include/math)
 set(INSTALL_CMAKE_DIR ${CMAKE_INSTALL_PREFIX}/lib/${LIB_NAME})
 
-set(PROJECT_BINARY_DIR lib)
-set(PROJECT_SOURCE_DIR src)
-
-
-include_directories("${PROJECT_SOURCE_DIR}" ../math/src)
+include_directories("${PROJECT_SOURCE_DIR}")
 
 # common methods for statis library
 # =================================
-include(../static_library.cmake)
+include(../cmake/static_library.cmake)
 
 
 #project(test_map)
