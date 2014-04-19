@@ -7,12 +7,10 @@
 #include <functional>
 #include <stdio.h>
 
-#include <gal/except.h>
+#include <galaxy/except.hpp>
 
-namespace gal
-{
-	template <class T> class map
-	{
+namespace gal {
+	template <class T> class map {
 		public:
 			typedef std::shared_ptr<T> mapped_type;
 			typedef std::map<int,std::shared_ptr<T> > map__;

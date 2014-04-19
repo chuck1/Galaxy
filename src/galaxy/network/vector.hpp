@@ -3,9 +3,9 @@
 
 #include <queue>
 
-#include <gal/config.h>
-#include <gal/util.h>
-#include <gal/network/message.h>
+#include <galaxy/config.hpp>
+#include <galaxy/util.hpp>
+#include <galaxy/network/message.hpp>
 
 namespace gal {
 	namespace network {
