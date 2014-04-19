@@ -1,1 +1,0 @@
-/usr/bin/c++    -g -std=c++0x -pthread -D_DEBUG    CMakeFiles/test_asio.dir/test/asio/main.cpp.o  -o test_asio -rdynamic libgalaxy.a -ltinyxml2 
