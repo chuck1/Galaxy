@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/nfs/stak/students/r/rymalc/Documents/Programming/C++/galaxy/test/map/main.cpp
+/home/charles/Programming/C++/galaxy/test/map/main.cpp
 gal/gal.h
 -
 gal/flag.h

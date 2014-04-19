@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/nfs/stak/students/r/rymalc/Documents/Programming/C++/galaxy/test/timer/main.cpp
+/home/charles/Programming/C++/galaxy/test/timer/main.cpp
 stdio.h
 -
 gal/timer/timer_set.h
