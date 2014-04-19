@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#include <gal/sig/signal.h>
-#include <gal/sig/connection.h>
+#include <galaxy/sig/signal.hpp>
+#include <galaxy/sig/connection.hpp>
 
 int fun(int a, int b)
 {

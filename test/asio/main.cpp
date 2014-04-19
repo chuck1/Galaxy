@@ -1,5 +1,6 @@
-#include <gal/network/client.h>
-#include <gal/network/server.h>
+
+#include <galaxy/network/client.hpp>
+#include <galaxy/network/server.hpp>
 
 void	client();
 void	server();
@@ -37,9 +38,9 @@ typedef std::shared_ptr<Client> Client_s;
 
 
 Client::Client(char const * addr, unsigned short port):
+	gal::network::communicating(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)),
 	gal::network::client(addr, port),
-	Communicating(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)),
-	gal::network::communicating(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP))
+	Communicating(::socket(PF_INET, SOCK_STREAM, IPPROTO_TCP))
 {
 }
 

@@ -23,7 +23,7 @@ using namespace std;
 	}
 }*/
 
-void	command::add( command::arg a )
+void	gal::command::add( command::arg a )
 {
 	command::arg* b = new command::arg(a);
 
@@ -38,14 +38,14 @@ void	command::add( command::arg a )
 	}
 }
 
-void	command::run()
+void	gal::command::run()
 {
 	if( argc_ > 1 )
 	{
 		parse( argv_+1 );
 	}
 }
-void	command::parse( char const * const * v )
+void	gal::command::parse( char const * const * v )
 {
 	char const * c = *v;
 	
@@ -58,7 +58,7 @@ void	command::parse( char const * const * v )
 		parse_val( v );
 	}
 }
-bool	command::is_short( char const * c )
+bool	gal::command::is_short( char const * c )
 {
 	if( strlen(c) < 2 )
 	{
@@ -77,7 +77,7 @@ bool	command::is_short( char const * c )
 	
 	return false;
 }
-bool	command::is_long( char const * c )
+bool	gal::command::is_long( char const * c )
 {
 	if( strlen(c) < 3 )
 	{
@@ -91,7 +91,7 @@ bool	command::is_long( char const * c )
 	
 	return false;
 }
-bool	command::is_val( char const * c )
+bool	gal::command::is_val( char const * c )
 {
 	if( strlen(c) == 0 )
 	{
@@ -108,7 +108,7 @@ bool	command::is_val( char const * c )
 
 
 
-void	command::parse_opt( char const * const * v )
+void	gal::command::parse_opt( char const * const * v )
 {
 	char const * c = *v;
 	
@@ -171,7 +171,7 @@ void	command::parse_opt( char const * const * v )
 		}
 	}
 }
-void	command::parse_val( char const * const * v )
+void	gal::command::parse_val( char const * const * v )
 {
 	char const * c = *v;
 
@@ -186,14 +186,14 @@ void	command::parse_val( char const * const * v )
 		parse(v);
 
 }
-void	command::print_args()
+void	gal::command::print_args()
 {
 	for( uint32_t i = 0; i < argc_; ++i )
 	{
 		printf( "%s\n", argv_[i] );
 	}
 }
-void	command::print()
+void	gal::command::print()
 {
 	printf("print %i %i\n", (int)map_short_.size(), (int)map_long_.size() );
 
@@ -206,7 +206,7 @@ void	command::print()
 	}
 
 }
-void	command::print_short( std::pair<const char,command::arg*>& p )
+void	gal::command::print_short( std::pair<const char,command::arg*>& p )
 {
 	command::arg* a = p.second;
 
@@ -218,7 +218,7 @@ void	command::print_short( std::pair<const char,command::arg*>& p )
 	}
 	printf( "\n" );
 }
-void	command::print_long( std::pair<const std::string,command::arg*>& p )
+void	gal::command::print_long( std::pair<const std::string,command::arg*>& p )
 {
 	command::arg* a = p.second;
 	
@@ -233,7 +233,7 @@ void	command::print_long( std::pair<const std::string,command::arg*>& p )
 
 //0000000000000000000000000000000000000000000000000000000000000000
 
-command::command( uint32_t argc, char const*const* argv ):
+gal::command::command( uint32_t argc, char const*const* argv ):
 	argc_( argc ),
 	argv_( argv ),
 	last_arg_( NULL )

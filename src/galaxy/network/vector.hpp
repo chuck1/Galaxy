@@ -2,6 +2,7 @@
 #define __GALAXY_NETWORK_ARRAY_H__
 
 #include <queue>
+#include <assert.h>
 
 #include <galaxy/config.hpp>
 #include <galaxy/util.hpp>

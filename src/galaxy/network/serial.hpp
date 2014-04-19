@@ -1,11 +1,11 @@
 #ifndef __GALAXY_NETWORK_SERIAL_H__
 #define __GALAXY_NETWORK_SERIAL_H__
 
-#include <gal/config.h>
-#include <gal/util.h>
+#include <assert.h>
 
-#include <gal/network/message.h>
-
+#include <galaxy/config.hpp>
+#include <galaxy/util.hpp>
+#include <galaxy/network/message.hpp>
 
 namespace gal {
         namespace network {

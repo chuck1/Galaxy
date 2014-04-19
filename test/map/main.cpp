@@ -1,7 +1,8 @@
-#include <gal/gal.h>
-#include <gal/flag.h>
-#include <gal/network/vector.h>
-#include <gal/network/serial.h>
+
+#include <galaxy/flag.hpp>
+#include <galaxy/network/vector.hpp>
+#include <galaxy/network/serial.hpp>
+#include <galaxy/map.hpp>
 
 class foo
 {
@@ -36,8 +37,8 @@ typedef gal::network::serial<int, gal::network::base> ser0;
 typedef gal::network::serial_ext<gal::network::vector_ext<ser<0>>> ser_ext;
 typedef gal::network::vector_ext<int,float> vec0;
 
-int main()
-{
+int main() {
+
 	gal::map<foo> m;
 	m.push_back<foo>(std::shared_ptr<foo>(new foo));
 	m.foreach<foo>(std::bind(&foo::fun, std::placeholders::_1));

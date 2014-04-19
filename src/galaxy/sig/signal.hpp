@@ -6,15 +6,12 @@
 #include <memory>
 #include <deque>
 
-#include <gal/config.h>
-#include <gal/sig/connection.h>
+#include <galaxy/config.hpp>
+#include <galaxy/sig/connection.hpp>
 
-namespace gal
-{
-	namespace sig
-	{
-		template <typename... Args> class signal
-		{
+namespace gal {
+	namespace sig {
+		template <typename... Args> class signal {
 			public:
 				typedef gal::sig::connection<Args...>	conn_t;
 				typedef std::shared_ptr<conn_t>		shared_t;
