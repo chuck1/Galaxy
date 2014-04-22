@@ -6,7 +6,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -rdynamic -g -Wall -std=c++0x -pthread -
 
 # common methods for statis library
 # =================================
-include(../cmake/static_library.cmake)
+include($ENV{HOME}/usr/lib/cmake/CMakeHelper/static_library.cmake)
 
 #add_subdirectory(test)
 
