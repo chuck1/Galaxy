@@ -1,23 +1,28 @@
+#include <cstdio>
 
 #include <galaxy/flag.hpp>
 #include <galaxy/network/vector.hpp>
 #include <galaxy/network/serial.hpp>
 #include <galaxy/map.hpp>
 
-class foo
-{
+class foo {
 	public:
-		void	fun(){}
-		int	i_;
 		void	i(int i) {i_ = i;}
+	
+		void	speak() {
+			printf("foo %i\n", i_);
+		}
+
+		int	i_;
+
 };
 
-class bar: public gal::flag<>
-{
+class bar: public gal::flag<> {
 	
 	unsigned int	f() {return flag_;}
 	void		f(unsigned int flag) {flag_ = flag;}
 	
+
 	unsigned int flag_;
 };
 
@@ -40,9 +45,20 @@ typedef gal::network::vector_ext<int,float> vec0;
 int main() {
 
 	gal::map<foo> m;
+
 	m.push_back<foo>(std::shared_ptr<foo>(new foo));
-	m.foreach<foo>(std::bind(&foo::fun, std::placeholders::_1));
-	
+	m.push_back<foo>(std::shared_ptr<foo>(new foo));
+	m.push_back<foo>(std::shared_ptr<foo>(new foo));
+	m.push_back<foo>(std::shared_ptr<foo>(new foo));
+
+	m.foreach<foo>(std::bind(&foo::speak, std::placeholders::_1));
+
+	auto it = m.find(0);
+
+	it = m.erase(it);
+
+	/*
+
 	bar b;
 	b.set(0);
 	
@@ -54,6 +70,8 @@ int main() {
 	s->write(msg);
 	s->read(msg);
 	s->size();
+
+	*/
 }
 
 
