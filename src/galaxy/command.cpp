@@ -10,96 +10,80 @@ using namespace std;
 
 
 /*bool str_pred::operator()( char const * a, char const * b ) const
-{
-	if( strcmp(a,b)==0 )
-	{
-		printf( "'%s'=='%s'\n", a, b );
-		return true;
+  {
+  if( strcmp(a,b)==0 )
+  {
+  printf( "'%s'=='%s'\n", a, b );
+  return true;
+  }
+  else
+  {
+  printf( "'%s'!='%s'\n", a, b );
+  return false;
+  }
+  }*/
+gal::Command::Command(int argc, char const * const * argv):
+	argc_(argc),
+	argv_(argv),
+	last_arg_(NULL)
+{}
+void	gal::Command::add(Command::Arg* a) {
+	//gal::Command::Arg* b = new command::Arg(a);
+	
+	if(a->short_ != 0) {
+		map_short_[a->short_] = a;
 	}
-	else
-	{
-		printf( "'%s'!='%s'\n", a, b );
-		return false;
-	}
-}*/
-
-void	gal::command::add( command::arg a )
-{
-	command::arg* b = new command::arg(a);
-
-	if( b->short_ != '-' )
-	{
-		map_short_[b->short_] = b;
-	}
-
-	if ( !b->long_.empty() )
-	{
-		map_long_[b->long_] = b;
-	}
-}
-
-void	gal::command::run()
-{
-	if( argc_ > 1 )
-	{
-		parse( argv_+1 );
+	
+	if (!a->long_.empty()) {
+		map_long_[a->long_] = a;
 	}
 }
-void	gal::command::parse( char const * const * v )
-{
+void	gal::Command::run() {
+	if(argc_ > 1) {
+		parse(argv_+1);
+	}
+}
+void	gal::Command::parse(char const * const * v) {
 	char const * c = *v;
 	
-	if( c[0]=='-' )
-	{
+	if(c[0]=='-') {
 		parse_opt( v );
-	}
-	else
-	{
+	} else {
 		parse_val( v );
 	}
 }
-bool	gal::command::is_short( char const * c )
-{
-	if( strlen(c) < 2 )
-	{
+bool	gal::Command::is_short(char const* c) {
+	if( strlen(c) < 2 ) {
 		return false;
 	}
 	
-	if( c[1]=='-' )
-	{
+	if(c[1]=='-') {
 		return false;
 	}
 	
-	if( c[0]=='-' )
-	{
+	if(c[0]=='-') {
 		return true;
 	}
 	
 	return false;
 }
-bool	gal::command::is_long( char const * c )
-{
-	if( strlen(c) < 3 )
-	{
+bool	gal::Command::is_long(char const * c) {
+	if( strlen(c) < 3 ) {
 		return false;
 	}
-	
-	if( c[0]=='-' && c[1]=='-' && c[2]!='-' )
-	{
+
+	if(c[0]=='-' && c[1]=='-' && c[2]!='-') {
 		return true;
 	}
 	
 	return false;
 }
-bool	gal::command::is_val( char const * c )
-{
-	if( strlen(c) == 0 )
-	{
+bool	gal::Command::is_val(char const * c) {
+	if(strlen(c) == 0) {
 		return false;
 	}
 	
-	if( c[0]!='-' )
-	{
+	if( c[0]!='-' ) {
 		return true;
 	}
 	
@@ -108,138 +92,109 @@ bool	gal::command::is_val( char const * c )
 
 
 
-void	gal::command::parse_opt( char const * const * v )
-{
+void	gal::Command::parse_opt(char const * const * v) {
+	// *(*v) == '-' guaranteed
+	
 	char const * c = *v;
 	
-	if( strlen(c)==1 )
-	{
-		printf( "error '%s'\n", c );
-	}
-	else if( c[1]=='-' )
-	{
+	if(strlen(c) == 1) {
+		printf("error '%s'\n", c);
+	} else if(c[1] == '-') {
 		// long
-		if( strlen(c)==2 )
-		{
-			printf( "error '%s'\n", c );
-		}
-		else
-		{
+		if(strlen(c) == 2) {
+			printf("error '%s'\n", c);
+		} else {
 			auto it = map_long_.find( c+2 );
-
-			if( it != map_long_.end() )
-			{
-				printf( "long option '%s'\n", c+2 );
+			
+			if( it != map_long_.end() ) {
+				printf("long option '%s'\n", c+2);
 				
+				// set last_arg_ so values are assigned to this arg
 				last_arg_ = it->second;
 				
-				if( ++v < ( argv_ + argc_ ) )
-					parse(v);
+				// go to next string
+				if(++v < (argv_ + argc_)) parse(v);
+			} else {
+				printf("long option '%s' not found\n", c+2);
 			}
-			else
-			{
-				printf( "long option '%s' not found\n", c+2 );
-			}
-
 		}
-	}
-	else
-	{
+	} else {
 		// short
-		size_t i = 1;
-
-		while( i < strlen(c) )
-		{
-			auto it = map_short_.find( c[i] );
-
-			if( it != map_short_.end() )
-			{
-				printf( "short option '%c'\n", c[i] );
-
+		unsigned int i = 1;
+		
+		// loop through string of short args (ex. "-abc" -> 'a', 'b', 'c')
+		while (i < strlen(c)) {
+			auto it = map_short_.find(c[i]);
+			
+			if(it != map_short_.end()) {
+				printf("short option '%c'\n", c[i]);
+				
+				// set last_arg_ so values are assigned to this arg
 				last_arg_ = it->second;
 				
-				if( ++v < ( argv_ + argc_ ) )
-					parse(v);
-
+				// go to next string
+				if(++v < (argv_ + argc_)) parse(v);
+			} else {
+				printf("short option '%c' not found\n", c[i]);
 			}
-			else
-			{
-				printf( "short option '%c' not found\n", c[i] );
-			}
-
+			
 			++i;
 		}
 	}
 }
-void	gal::command::parse_val( char const * const * v )
-{
+void	gal::Command::parse_val(char const * const * v) {
 	char const * c = *v;
-
-	printf( "value '%s'\n", c );
 	
-	if( last_arg_ )
-	{
-		last_arg_->val_.push_back(c);
-	}
+	printf("value '%s'\n", c);
 	
-	if( ++v < ( argv_ + argc_ ) )
-		parse(v);
-
+	if(last_arg_ != NULL) last_arg_->val_.push_back(c);
+	
+	// go to next string
+	if( ++v < ( argv_ + argc_ ) ) parse(v);
 }
-void	gal::command::print_args()
-{
-	for( uint32_t i = 0; i < argc_; ++i )
-	{
+void	gal::Command::print_args() {
+	for(unsigned int i = 0; i < argc_; ++i) {
 		printf( "%s\n", argv_[i] );
 	}
 }
-void	gal::command::print()
+void	gal::Command::print()
 {
 	printf("print %i %i\n", (int)map_short_.size(), (int)map_long_.size() );
 
 	for( auto it = map_short_.begin(); it !=  map_short_.end(); ++it ) {
 		print_short( *it );
 	}
-	
+
 	for( auto it = map_long_.begin(); it !=  map_long_.end(); ++it ) {
 		print_long( *it );
 	}
 
 }
-void	gal::command::print_short( std::pair<const char,command::arg*>& p )
-{
-	command::arg* a = p.second;
+void	gal::Command::print_short( std::pair<const char,gal::Command::Arg*>& p ) {
+	Command::Arg* a = p.second;
 
 	printf("short: %c ",a->short_);
 
-	for( auto it = a->val_.begin(); it != a->val_.end(); ++it )
-	{
-		printf( "%s ", *it );
+	for( auto it = a->val_.begin(); it != a->val_.end(); ++it ) {
+		printf("%s ", it->c_str());
 	}
 	printf( "\n" );
 }
-void	gal::command::print_long( std::pair<const std::string,command::arg*>& p )
+void	gal::Command::print_long( std::pair<const std::string,Command::Arg*>& p )
 {
-	command::arg* a = p.second;
-	
+	Command::Arg* a = p.second;
+
 	printf("long: %s ",a->long_.c_str() );
-	
+
 	for( auto it = a->val_.begin(); it != a->val_.end(); ++it )
 	{
-		printf( "%s ", *it );
+		printf("%s ", it->c_str());
 	}
 	printf( "\n" );
 }
 
-//0000000000000000000000000000000000000000000000000000000000000000
 
-gal::command::command( uint32_t argc, char const*const* argv ):
-	argc_( argc ),
-	argv_( argv ),
-	last_arg_( NULL )
-{
-}
-/*command::command(const char *args)
+/*Command::command(const char *args)
   {
   m_argUsed  = NULL;
   m_argc   = 0;
@@ -266,7 +221,7 @@ gal::command::command( uint32_t argc, char const*const* argv ):
   m_argUsed[i] = false;
   }
   }
-  command::~command(void)
+  Command::~command(void)
   {
   if(m_freeme)
   {
@@ -279,15 +234,15 @@ gal::command::command( uint32_t argc, char const*const* argv ):
   m_argUsed = NULL;
   }
   }
-  unsigned int	command::get_argc(void) const
+  unsigned int	Command::get_argc(void) const
   {
   return(m_argc);
   }
-  const char*	command::get_program_name(void) const
+  const char*	Command::get_program_name(void) const
   {
   return(m_argv[0]);
   }
-  unsigned int	command::unused_args_buf_size(void) const
+  unsigned int	Command::unused_args_buf_size(void) const
   {
   unsigned int bufLen = 0;
 
@@ -306,7 +261,7 @@ gal::command::command( uint32_t argc, char const*const* argv ):
 
   return(bufLen);
   }
-  const char*	command::get_unused_args(char *buf, unsigned int bufSize) const
+  const char*	Command::get_unused_args(char *buf, unsigned int bufSize) const
   {
   if( bufSize != 0 )
   {
@@ -323,7 +278,7 @@ for(unsigned int i = 1; i < m_argc; i++)
 
 return(buf);
 }
-bool		command::has_switch(const char *s, unsigned int argNum) const
+bool		Command::has_switch(const char *s, unsigned int argNum) const
 {
 	// has a given command-line switch?
 	// e.g. s=="foo" checks for -foo
@@ -368,7 +323,7 @@ bool		command::has_switch(const char *s, unsigned int argNum) const
 
 	return has;
 }
-const char*	command::get_value(const char *s,  unsigned int argNum) const
+const char*	Command::get_value(const char *s,  unsigned int argNum) const
 {
 	// gets the value of a switch... 
 	// e.g. s="foo" returns "bar" if '-foo=bar' is in the command.
@@ -430,7 +385,7 @@ const char*	command::get_value(const char *s,  unsigned int argNum) const
 
 	return value;
 }
-bool		command::isCommand(const char *s) const
+bool		Command::isCommand(const char *s) const
 {
 	//! if the first argument is the given command.
 	bool has = false;
@@ -442,7 +397,7 @@ bool		command::isCommand(const char *s) const
 	}
 	return has;
 }
-const char*	command::getCommand(void) const
+const char*	Command::getCommand(void) const
 {
 	//! get the first argument assuming it isn't a switch.
 	//  e.g. for the command-line "myapp.exe editor -foo" it will return "editor".
@@ -498,37 +453,37 @@ char**		CommandLineToArgvA(const char* cmdLine, unsigned int& _argc)
 			{
 				case '\"':
 					in_QM = true;
-				in_TEXT = true;
-				if(in_SPACE)
-				{
-					argv[argc] = _argv+j;
-					argc++;
-				}
-				in_SPACE = false;
-				break;
+					in_TEXT = true;
+					if(in_SPACE)
+					{
+						argv[argc] = _argv+j;
+						argc++;
+					}
+					in_SPACE = false;
+					break;
 				case ' ':
 				case '\t':
 				case '\n':
 				case '\r':
-				if(in_TEXT)
-				{
-					_argv[j] = '\0';
-					j++;
-				}
-				in_TEXT = false;
-				in_SPACE = true;
-				break;
+					if(in_TEXT)
+					{
+						_argv[j] = '\0';
+						j++;
+					}
+					in_TEXT = false;
+					in_SPACE = true;
+					break;
 				default:
-				in_TEXT = true;
-				if(in_SPACE)
-				{
-					argv[argc] = _argv+j;
-					argc++;
-				}
-				_argv[j] = a;
-				j++;
-				in_SPACE = false;
-				break;
+					in_TEXT = true;
+					if(in_SPACE)
+					{
+						argv[argc] = _argv+j;
+						argc++;
+					}
+					_argv[j] = a;
+					j++;
+					in_SPACE = false;
+					break;
 			}
 		}
 		i++;
