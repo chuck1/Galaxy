@@ -1,0 +1,9 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.8)
+
+INCLUDE("$ENV{HOME}/.config.cmake")
+
+install(FILES
+	"${PROJECT_SOURCE_DIR}/GalaxyConfig.cmake"
+	DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/Galaxy" COMPONENT dev)
+
+
