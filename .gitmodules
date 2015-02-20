@@ -6,7 +6,7 @@
 	url = https://chuck1@github.com/chuck1/Galaxy-Console.git
 [submodule "components/net"]
 	path = components/net
-	url = https://chuck1@github.com/chuck1/Galaxy-Network.git
+	url = git@github.com:chuck1/Galaxy-Network.git
 [submodule "components/log"]
 	path = components/log
 	url = https://chuck1@github.com/chuck1/Galaxy-Log.git
