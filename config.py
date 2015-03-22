@@ -1,8 +1,7 @@
-#CMAKE_MINIMUM_REQUIRED(VERSION 2.8.8)
 
-#INCLUDE($ENV{HOME}/.config.cmake)
+add_global_define("GLM_FORCE_RADIANS=1")
+add_global_define("_DEBUG=1")
 
-#ADD_SUBDIRECTORY(external)
 include("components")
 
 
