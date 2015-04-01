@@ -1,5 +1,5 @@
-include("std")
-include("log")
-include("console")
-include("net")
+self.include("std")
+self.include("log")
+self.include("console")
+self.include("net")
 
