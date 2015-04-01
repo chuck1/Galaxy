@@ -1,0 +1,10 @@
+[submodule "components/console"]
+	path = components/console
+	url = git@github.com:chuck1/Galaxy-Console.git
+[submodule "components/std"]
+	path = components/std
+	url = git@github.com:chuck1/Galaxy-Standard.git
+[submodule "components/net"]
+	path = components/net
+	url = git@github.com:chuck1/Galaxy-Network.git
+
